@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Xucadev — Christopher Lora. Especialista en ciberseguridad, marketing digital y desarrollo web freelancer en Santiago, RD.">
+  <title>Xucadev — Christopher Lora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#inicio" class="nav-logo">Xuca<span>dev</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#servicios"  data-es="Servicios"       data-en="Services">Servicios</a></li>
+        <li><a href="#proyectos"  data-es="Proyectos"       data-en="Projects">Proyectos</a></li>
+        <li><a href="#sobre-mi"   data-es="Sobre mí"        data-en="About">Sobre mí</a></li>
+        <li><a href="#certificaciones" data-es="Certificaciones" data-en="Certifications">Certificaciones</a></li>
+        <li><a href="#contacto"   data-es="Contacto"        data-en="Contact">Contacto</a></li>
+      </ul>
+      <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">☀</button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <p class="hero-eyebrow" data-es="Disponible para proyectos" data-en="Available for projects">Disponible para proyectos</p>
+      <h1 class="hero-title">
+        Christopher<br>
+        <span class="hero-accent">Lora.</span>
+      </h1>
+      <p class="hero-subtitle" id="hero-sub">
+        Especialista en ciberseguridad, técnico en marketing digital y desarrollador freelancer. Soluciones web reales para negocios reales.
+      </p>
+      <div class="hero-actions">
+        <a href="#proyectos" class="btn-primary" id="btn-projects">Ver proyectos →</a>
+        <a href="#contacto"  class="btn-secondary" id="btn-contact">Contactar</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">HTML / CSS</span>
+        <span class="tag">SEO On-Page</span>
+        <span class="tag">Google Business</span>
+        <span class="tag">Landing Pages</span>
+        <span class="tag">Marketing Digital</span>
+        <span class="tag">Ciberseguridad</span>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+      <p class="section-label" data-es="Lo que ofrezco" data-en="What I offer">Lo que ofrezco</p>
+      <h2 class="section-title" id="services-title">Servicios</h2>
+      <p class="section-desc" id="services-desc">Soluciones digitales enfocadas en resultados. Cada proyecto tiene un objetivo claro: que tu negocio se vea profesional y se encuentre en internet.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3 class="service-title" data-es="Landing Pages" data-en="Landing Pages">Landing Pages</h3>
+          <p class="service-desc" data-es="Páginas modernas, rápidas y optimizadas. Diseño enfocado en conversión y primera impresión." data-en="Modern, fast and optimized pages. Design focused on conversion and first impression.">Páginas modernas, rápidas y optimizadas. Diseño enfocado en conversión y primera impresión.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3 class="service-title" data-es="SEO On-Page" data-en="On-Page SEO">SEO On-Page</h3>
+          <p class="service-desc" data-es="Optimización de velocidad, estructura y contenido para que Google encuentre tu negocio primero." data-en="Speed, structure and content optimization so Google finds your business first.">Optimización de velocidad, estructura y contenido para que Google encuentre tu negocio primero.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📍</div>
+          <h3 class="service-title" data-es="Google Business Profile" data-en="Google Business Profile">Google Business Profile</h3>
+          <p class="service-desc" data-es="Configuración y optimización de tu perfil en Google Maps. Aparece cuando te buscan localmente." data-en="Setup and optimization of your Google Maps profile. Show up when people search locally.">Configuración y optimización de tu perfil en Google Maps. Aparece cuando te buscan localmente.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3 class="service-title" data-es="Rediseño Web" data-en="Web Redesign">Rediseño Web</h3>
+          <p class="service-desc" data-es="¿Tu página quedó en el 2015? La modernizo con diseño limpio, responsive y funcional." data-en="Is your website stuck in 2015? I'll modernize it with a clean, responsive and functional design.">¿Tu página quedó en el 2015? La modernizo con diseño limpio, responsive y funcional.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3 class="service-title" data-es="Marketing Digital" data-en="Digital Marketing">Marketing Digital</h3>
+          <p class="service-desc" data-es="Estrategia de presencia digital: identidad visual, redes sociales y posicionamiento de marca." data-en="Digital presence strategy: visual identity, social media and brand positioning.">Estrategia de presencia digital: identidad visual, redes sociales y posicionamiento de marca.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔒</div>
+          <h3 class="service-title" data-es="Auditoría Web Básica" data-en="Basic Web Audit">Auditoría Web Básica</h3>
+          <p class="service-desc" data-es="Revisión de seguridad y rendimiento de tu sitio. Identifico vulnerabilidades básicas y puntos de mejora." data-en="Security and performance review of your site. I identify basic vulnerabilities and improvement points.">Revisión de seguridad y rendimiento de tu sitio. Identifico vulnerabilidades básicas y puntos de mejora.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+      <p class="section-label" data-es="Mi trabajo" data-en="My work">Mi trabajo</p>
+      <h2 class="section-title" id="projects-title">Proyectos</h2>
+      <p class="section-desc" id="projects-desc">Cada proyecto es una solución real. Aquí puedes ver ejemplos de lo que puedo construir para tu negocio.</p>
+
+      <div class="projects-filter" id="projects-filter">
+        <button class="filter-btn active" data-filter="all"   data-es="Todos"          data-en="All">Todos</button>
+        <button class="filter-btn"        data-filter="landing" data-es="Landing Pages" data-en="Landing Pages">Landing Pages</button>
+        <button class="filter-btn"        data-filter="seo"   data-es="SEO"            data-en="SEO">SEO</button>
+        <button class="filter-btn"        data-filter="gmb"   data-es="Google Maps"    data-en="Google Maps">Google Maps</button>
+        <button class="filter-btn"        data-filter="redesign" data-es="Rediseño"    data-en="Redesign">Rediseño</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Proyecto demo 1 -->
+        <article class="project-card" data-category="landing">
+          <div class="project-thumb">
+            <div class="project-thumb-placeholder">
+              <span class="thumb-icon">🌐</span>
+              <span class="thumb-label">Landing Page</span>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-category" data-es="Landing Page" data-en="Landing Page">Landing Page</span>
+            </div>
+            <h3 class="project-name" data-es="Barbería El Clasico" data-en="Barbería El Clasico">Barbería El Clasico</h3>
+            <p class="project-desc" data-es="Landing page para barbería local con galería, precios y formulario de citas." data-en="Landing page for a local barbershop with gallery, pricing and booking form.">Landing page para barbería local con galería, precios y formulario de citas.</p>
+            <div class="project-stack">
+              <span class="stack-tag">HTML</span>
+              <span class="stack-tag">CSS</span>
+              <span class="stack-tag">JS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto demo 2 -->
+        <article class="project-card" data-category="gmb">
+          <div class="project-thumb">
+            <div class="project-thumb-placeholder">
+              <span class="thumb-icon">📍</span>
+              <span class="thumb-label">Google Business</span>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-category" data-es="Google Business Profile" data-en="Google Business Profile">Google Business Profile</span>
+            </div>
+            <h3 class="project-name" data-es="Restaurante La Esquina" data-en="Restaurante La Esquina">Restaurante La Esquina</h3>
+            <p class="project-desc" data-es="Optimización completa de perfil en Google Maps: fotos, horarios, reseñas y categorías." data-en="Full Google Maps profile optimization: photos, hours, reviews and categories.">Optimización completa de perfil en Google Maps: fotos, horarios, reseñas y categorías.</p>
+            <div class="project-stack">
+              <span class="stack-tag">Google Business</span>
+              <span class="stack-tag">SEO Local</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto demo 3 -->
+        <article class="project-card" data-category="redesign">
+          <div class="project-thumb">
+            <div class="project-thumb-placeholder">
+              <span class="thumb-icon">🎨</span>
+              <span class="thumb-label">Rediseño</span>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-category" data-es="Rediseño Web" data-en="Web Redesign">Rediseño Web</span>
+            </div>
+            <h3 class="project-name" data-es="Consultorio Médico" data-en="Medical Office">Consultorio Médico</h3>
+            <p class="project-desc" data-es="Modernización de sitio web existente: diseño responsive, velocidad y nueva identidad visual." data-en="Modernization of existing website: responsive design, speed and new visual identity.">Modernización de sitio web existente: diseño responsive, velocidad y nueva identidad visual.</p>
+            <div class="project-stack">
+              <span class="stack-tag">HTML</span>
+              <span class="stack-tag">CSS</span>
+              <span class="stack-tag">Vercel</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="projects-note" id="projects-note" data-es="* Proyectos de muestra. Próximamente proyectos reales con clientes." data-en="* Sample projects. Real client projects coming soon.">* Proyectos de muestra. Próximamente proyectos reales con clientes.</p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-card-main">
+            <div class="about-avatar">CL</div>
+            <p class="about-name">Christopher Lora</p>
+            <p class="about-role" id="about-role">Especialista en Ciberseguridad · Developer · Marketer</p>
+            <p class="about-location" id="about-location">📍 Santiago, República Dominicana</p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-num">3+</div>
+                <div class="stat-label" data-es="Certificaciones" data-en="Certifications">Certificaciones</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">2</div>
+                <div class="stat-label" data-es="Títulos Técnicos" data-en="Tech Degrees">Títulos Técnicos</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-floating" id="about-floating">✦ Disponible para proyectos</div>
+        </div>
+
+        <div class="about-text">
+          <p class="section-label" data-es="Sobre mí" data-en="About me">Sobre mí</p>
+          <h2 class="section-title" id="about-title">¿Quién soy?</h2>
+          <p id="about-p1">Soy Christopher Lora, estudiante de Tecnología en Ciberseguridad en la PUCMM y técnico titulado por INFOTEP en Marketing Digital y Contabilidad Auxiliar. También cuento con una certificación intermedia en ciberseguridad avalada por INDOTEL a través del programa Talento Digital RD.</p>
+          <p id="about-p2">Combino conocimientos técnicos reales con habilidades de marketing para ofrecer soluciones web que no solo se ven bien, sino que funcionan y se encuentran en internet.</p>
+          <div class="skills-list">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">SEO</span>
+            <span class="skill-pill">Google Analytics</span>
+            <span class="skill-pill">Redes</span>
+            <span class="skill-pill">Linux</span>
+            <span class="skill-pill">Marketing Digital</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CERTIFICACIONES -->
+    <section id="certificaciones">
+      <p class="section-label" data-es="Formación" data-en="Education & Certs">Formación</p>
+      <h2 class="section-title" id="certs-title">Certificaciones y estudios</h2>
+      <p class="section-desc" id="certs-desc">Formación técnica real, no solo teórica. Cada credencial representa horas de práctica y estudio aplicado.</p>
+
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-icon">🎓</div>
+          <div>
+            <p class="cert-name" data-es="Tecnología en Ciberseguridad" data-en="Cybersecurity Technology">Tecnología en Ciberseguridad</p>
+            <p class="cert-issuer" data-es="PUCMM — En curso" data-en="PUCMM — In progress">PUCMM — En curso</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div>
+            <p class="cert-name" data-es="Técnico en Marketing Digital" data-en="Digital Marketing Technician">Técnico en Marketing Digital</p>
+            <p class="cert-issuer">INFOTEP</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div>
+            <p class="cert-name" data-es="Técnico en Contabilidad Auxiliar" data-en="Auxiliary Accounting Technician">Técnico en Contabilidad Auxiliar</p>
+            <p class="cert-issuer">INFOTEP</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🛡️</div>
+          <div>
+            <p class="cert-name" data-es="Certificación Intermedia en Ciberseguridad" data-en="Intermediate Cybersecurity Certification">Certificación Intermedia en Ciberseguridad</p>
+            <p class="cert-issuer">Talento Digital RD · INDOTEL</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <p class="section-label" data-es="Hablemos" data-en="Let's talk">Hablemos</p>
+          <h2 class="section-title" id="contact-title">¿Tienes un proyecto?</h2>
+          <p id="contact-desc">Si tienes un negocio y quieres mejorar tu presencia digital, estoy disponible. Sin complicaciones, sin lenguaje técnico innecesario.</p>
+          <a href="mailto:christlora@proton.me" class="contact-link">
+            <span class="contact-link-icon">✉</span>
+            christlora@proton.me
+          </a>
+          <a href="https://github.com/xucadev" class="contact-link" target="_blank" rel="noopener">
+            <span class="contact-link-icon">⌥</span>
+            github.com/xucadev
+          </a>
+        </div>
+
+        <form class="contact-form" id="contactForm" onsubmit="handleSend(event)">
+          <div class="form-group">
+            <label for="input-name" id="label-name" data-es="Tu nombre" data-en="Your name">Tu nombre</label>
+            <input type="text" id="input-name" name="name" placeholder="Nombre completo" required>
+          </div>
+          <div class="form-group">
+            <label for="input-email" id="label-email" data-es="Tu correo" data-en="Your email">Tu correo</label>
+            <input type="email" id="input-email" name="email" placeholder="correo@ejemplo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="input-service" id="label-service" data-es="Servicio de interés" data-en="Service of interest">Servicio de interés</label>
+            <input type="text" id="input-service" name="service" placeholder="Landing page, SEO, Google Maps...">
+          </div>
+          <div class="form-group">
+            <label for="input-msg" id="label-msg" data-es="Mensaje" data-en="Message">Mensaje</label>
+            <textarea id="input-msg" name="message" rows="4" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">
+            <span id="btn-send-text">Enviar mensaje</span> →
+          </button>
+          <p class="form-note" id="form-note" data-es="* Abre tu cliente de correo por defecto." data-en="* Opens your default email client.">* Abre tu cliente de correo por defecto.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <hr class="divider">
+
+  <footer>
+    <a href="#inicio" class="footer-logo">Xuca<span>dev</span></a>
+    <p class="footer-copy" id="footer-copy" data-es="© 2025 Christopher Lora · Hecho con código y café." data-en="© 2025 Christopher Lora · Built with code and coffee.">© 2025 Christopher Lora · Hecho con código y café.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
