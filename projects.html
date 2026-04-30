@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyectos de Xucadev — Demos de landing pages para negocios locales en Santiago, RD.">
+  <title>Proyectos — Xucadev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Xuca<span>dev</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
+        <li><a href="projects.html"        data-es="Proyectos" data-en="Projects" class="nav-active">Proyectos</a></li>
+        <li><a href="index.html#sobre-mi"  data-es="Sobre mí"  data-en="About">Sobre mí</a></li>
+        <li><a href="index.html#contacto"  data-es="Contacto"  data-en="Contact">Contacto</a></li>
+      </ul>
+      <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">☀</button>
+    </div>
+  </nav>
+
+  <main class="projects-main">
+
+    <!-- HEADER -->
+    <section class="projects-header">
+      <div class="ph-inner">
+        <p class="section-label" data-es="Mi trabajo" data-en="My work">Mi trabajo</p>
+        <h1 class="section-title projects-h1" id="ph-title">Proyectos <span class="accent-text">demo</span></h1>
+        <p class="section-desc" id="ph-desc">Cada demo está construido a medida para un tipo de negocio real. Diseño único, trilingüe, responsive y listo para producción.</p>
+
+        <!-- FILTROS -->
+        <div class="pf-tabs" id="filterTabs">
+          <button class="pf-tab active" data-filter="all"        id="ft-all"   onclick="filterProjects(this)">Todos</button>
+          <button class="pf-tab" data-filter="food"              onclick="filterProjects(this)" data-es="Comida & Bebida" data-en="Food & Drink">Comida & Bebida</button>
+          <button class="pf-tab" data-filter="beauty"            onclick="filterProjects(this)" data-es="Belleza" data-en="Beauty">Belleza</button>
+          <button class="pf-tab" data-filter="fitness"           onclick="filterProjects(this)" data-es="Fitness" data-en="Fitness">Fitness</button>
+          <button class="pf-tab" data-filter="tech"              onclick="filterProjects(this)" data-es="Tecnología" data-en="Technology">Tecnología</button>
+          <button class="pf-tab" data-filter="education"         onclick="filterProjects(this)" data-es="Educación" data-en="Education">Educación</button>
+          <button class="pf-tab" data-filter="creative"          onclick="filterProjects(this)" data-es="Creatividad" data-en="Creative">Creatividad</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID DE PROYECTOS -->
+    <section class="projects-grid-section">
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Restaurante -->
+        <article class="project-card" data-category="food">
+          <div class="project-thumb">
+            <div class="project-thumb-ph pt-restaurant"><span>🍽️</span></div>
+            <div class="project-overlay">
+              <a href="../Restaurant/index.html" target="_blank" rel="noopener" class="project-btn-demo" id="demo-1" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-category-tag food-tag" data-es="Restaurante" data-en="Restaurant">Restaurante</span>
+              <div class="project-tech-dots">
+                <span class="td" title="HTML">H</span>
+                <span class="td" title="CSS">C</span>
+                <span class="td" title="JS">J</span>
+              </div>
+            </div>
+            <h3 class="project-name">Deli Xuca</h3>
+            <p class="project-desc" data-es="Restaurante dominicano. Diseño elegante con tipografía Cormorant, paleta azul pastel y dorado. Menú con tabs, galería y Google Maps." data-en="Dominican restaurant. Elegant design with Cormorant typography, pastel blue and gold palette. Menu with tabs, gallery and Google Maps.">Restaurante dominicano. Diseño elegante con tipografía Cormorant, paleta azul pastel y dorado. Menú con tabs, galería y Google Maps.</p>
+            <div class="project-features">
+              <span class="pf-chip">ES · EN · FR</span>
+              <span class="pf-chip">Dark / Light</span>
+              <span class="pf-chip">Responsive</span>
+              <span class="pf-chip">Accesible</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bar-Restaurant -->
+        <article class="project-card" data-category="food">
+          <div class="project-thumb">
+            <div class="project-thumb-ph pt-bar"><span>🍹</span></div>
+            <div class="project-overlay">
+              <a href="../Bar-Restaurant/index.html" target="_blank" rel="noopener" class="project-btn-demo" id="demo-2" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-category-tag food-tag" data-es="Bar-Restaurant" data-en="Bar-Restaurant">Bar-Restaurant</span>
+              <div class="project-tech-dots">
+                <span class="td">H</span><span class="td">C</span><span class="td">J</span>
+              </div>
+            </div>
+            <h3 class="project-name">Deli-Bar Xuca</h3>
+            <p class="project-desc" data-es="Bar-restaurant urbano y joven. Tipografía Bebas Neue, azul vibrante con cyan. Sección de bar separada, ticker animado y cards de contacto." data-en="Young urban bar-restaurant. Bebas Neue typography, vibrant blue with cyan. Separate bar section, animated ticker and contact cards.">Bar-restaurant urbano y joven. Tipografía Bebas Neue, azul vibrante con cyan. Sección de bar separada, ticker animado y cards de contacto.</p>
+            <div class="project-features">
+              <span class="pf-chip">ES · EN · FR</span>
+              <span class="pf-chip">Dark / Light</span>
+              <span class="pf-chip">Responsive</span>
+              <span class="pf-chip">Accesible</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cafetería -->
+        <article class="project-card" data-category="food">
+          <div class="project-thumb">
+            <div class="project-thumb-ph pt-cafe"><span>☕</span></div>
+            <div class="project-overlay">
+              <a href="../Cafeteria/index.html" target="_blank" rel="noopener" class="project-btn-demo" id="demo-3" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-category-tag food-tag" data-es="Cafetería" data-en="Café">Cafetería</span>
+              <div class="project-tech-dots">
+                <span class="td">H</span><span class="td">C</span><span class="td">J</span>
+              </div>
+            </div>
+            <h3 class="project-name">Deli Xuca Café</h3>
+            <p class="project-desc" data-es="Cafetería cálida y vibrante. Tipografía Fraunces, paleta verde matcha + amarillo + terracota. Menú con 5 categorías, especialidades y cup animado." data-en="Warm and vibrant café. Fraunces typography, matcha green + yellow + terracotta palette. Menu with 5 categories, specials and animated cup.">Cafetería cálida y vibrante. Tipografía Fraunces, paleta verde matcha + amarillo + terracota. Menú con 5 categorías, especialidades y cup animado.</p>
+            <div class="project-features">
+              <span class="pf-chip">ES · EN · FR</span>
+              <span class="pf-chip">Dark / Light</span>
+              <span class="pf-chip">Responsive</span>
+              <span class="pf-chip">Accesible</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Salón de Belleza -->
+        <article class="project-card" data-category="beauty">
+          <div class="project-thumb">
+            <div class="project-thumb-ph pt-salon"><span>💅</span></div>
+            <div class="project-overlay">
+              <a href="../Salon de Belleza/index.html" target="_blank" rel="noopener" class="project-btn-demo" id="demo-4" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-category-tag beauty-tag" data-es="Salón de Belleza" data-en="Beauty Salon">Salón de Belleza</span>
+              <div class="project-tech-dots">
+                <span class="td">H</span><span class="td">C</span><span class="td">J</span>
+              </div>
+            </div>
+            <h3 class="project-name">D'Xuca Salon</h3>
+            <p class="project-desc" data-es="Salón femenino y elegante. Tipografía Playfair Display, rosa pastel con dorado. Catálogo de estilos, servicios con precios y héroe en dos columnas." data-en="Feminine and elegant salon. Playfair Display typography, pastel rose with gold. Style catalog, services with pricing and two-column hero.">Salón femenino y elegante. Tipografía Playfair Display, rosa pastel con dorado. Catálogo de estilos, servicios con precios y héroe en dos columnas.</p>
+            <div class="project-features">
+              <span class="pf-chip">ES · EN · FR</span>
+              <span class="pf-chip">Dark / Light</span>
+              <span class="pf-chip">Responsive</span>
+              <span class="pf-chip">Accesible</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Barbería -->
+        <article class="project-card" data-category="beauty">
+          <div class="project-thumb">
+            <div class="project-thumb-ph pt-barber"><span>✂️</span></div>
+            <div class="project-overlay">
+              <a href="../Barberia/index.html" target="_blank" rel="noopener" class="project-btn-demo" id="demo-5" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-category-tag beauty-tag" data-es="Barbería" data-en="Barbershop">Barbería</span>
+              <div class="project-tech-dots">
+                <span class="td">H</span><span class="td">C</span><span class="td">J</span>
+              </div>
+            </div>
+            <h3 class="project-name">Xuca BarberShop</h3>
+            <p class="project-desc" data-es="Barbería urbana y artística. Tipografía Barlow Condensed, azul fuerte con naranja. Ticker animado, servicios numerados y catálogo con tabs." data-en="Urban artistic barbershop. Barlow Condensed typography, strong blue with orange. Animated ticker, numbered services and tabbed catalog.">Barbería urbana y artística. Tipografía Barlow Condensed, azul fuerte con naranja. Ticker animado, servicios numerados y catálogo con tabs.</p>
+            <div class="project-features">
+              <span class="pf-chip">ES · EN · FR</span>
+              <span class="pf-chip">Dark / Light</span>
+              <span class="pf-chip">Responsive</span>
+              <span class="pf-chip">Accesible</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Gimnasio -->
+        <article class="project-card" data-category="fitness">
+          <div class="project-thumb">
+            <div class="project-thumb-ph pt-gym"><span>💪</span></div>
+            <div class="project-overlay">
+              <a href="../Gym/index.html" target="_blank" rel="noopener" class="project-btn-demo" id="demo-6" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-category-tag fitness-tag" data-es="Gimnasio" data-en="Gym">Gimnasio</span>
+              <div class="project-tech-dots">
+                <span class="td">H</span><span class="td">C</span><span class="td">J</span>
+              </div>
+            </div>
+            <h3 class="project-name">Gym Xuca</h3>
+            <p class="project-desc" data-es="Gimnasio enérgico y deportivo. Tipografía Anton, negro + amarillo eléctrico. Planes de membresía, clases grupales y ticker de servicios." data-en="Energetic sports gym. Anton typography, black + electric yellow. Membership plans, group classes and services ticker.">Gimnasio enérgico y deportivo. Tipografía Anton, negro + amarillo eléctrico. Planes de membresía, clases grupales y ticker de servicios.</p>
+            <div class="project-features">
+              <span class="pf-chip">ES · EN · FR</span>
+              <span class="pf-chip">Dark / Light</span>
+              <span class="pf-chip">Responsive</span>
+              <span class="pf-chip">Accesible</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- SmartShop -->
+        <article class="project-card" data-category="tech">
+          <div class="project-thumb">
+            <div class="project-thumb-ph pt-tech"><span>📱</span></div>
+            <div class="project-overlay">
+              <a href="../SmartShop/index.html" target="_blank" rel="noopener" class="project-btn-demo" id="demo-7" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-category-tag tech-tag" data-es="Tienda Tech" data-en="Tech Store">Tienda Tech</span>
+              <div class="project-tech-dots">
+                <span class="td">H</span><span class="td">C</span><span class="td">J</span>
+              </div>
+            </div>
+            <h3 class="project-name">D'Xuca Smartphone</h3>
+            <p class="project-desc" data-es="Tienda de celulares futurista. Tipografía Oxanium, negro profundo con cian eléctrico. Circuitos SVG animados, mockup de celular y catálogo con marcas." data-en="Futuristic phone store. Oxanium typography, deep black with electric cyan. Animated SVG circuits, phone mockup and brand catalog.">Tienda de celulares futurista. Tipografía Oxanium, negro profundo con cian eléctrico. Circuitos SVG animados, mockup de celular y catálogo con marcas.</p>
+            <div class="project-features">
+              <span class="pf-chip">ES · EN · FR</span>
+              <span class="pf-chip">Dark / Light</span>
+              <span class="pf-chip">Responsive</span>
+              <span class="pf-chip">Accesible</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Instituto -->
+        <article class="project-card" data-category="education">
+          <div class="project-thumb">
+            <div class="project-thumb-ph pt-institute"><span>🎓</span></div>
+            <div class="project-overlay">
+              <a href="../Instituto/index.html" target="_blank" rel="noopener" class="project-btn-demo" id="demo-8" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-category-tag edu-tag" data-es="Instituto" data-en="Institute">Instituto</span>
+              <div class="project-tech-dots">
+                <span class="td">H</span><span class="td">C</span><span class="td">J</span>
+              </div>
+            </div>
+            <h3 class="project-name">Instituto Xuca</h3>
+            <p class="project-desc" data-es="Instituto académico formal y elegante. Tipografía Libre Baskerville, azul marino con dorado. Escudo institucional, programas numerados y catálogo en tabla." data-en="Formal and elegant academic institute. Libre Baskerville typography, navy blue with gold. Institutional crest, numbered programs and table catalog.">Instituto académico formal y elegante. Tipografía Libre Baskerville, azul marino con dorado. Escudo institucional, programas numerados y catálogo en tabla.</p>
+            <div class="project-features">
+              <span class="pf-chip">ES · EN · FR</span>
+              <span class="pf-chip">Dark / Light</span>
+              <span class="pf-chip">Responsive</span>
+              <span class="pf-chip">Accesible</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Studio -->
+        <article class="project-card" data-category="creative">
+          <div class="project-thumb">
+            <div class="project-thumb-ph pt-photo"><span>📸</span></div>
+            <div class="project-overlay">
+              <a href="../Photo Studio/index.html" target="_blank" rel="noopener" class="project-btn-demo" id="demo-9" data-es="Ver demo" data-en="View demo">Ver demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-category-tag creative-tag" data-es="Foto Estudio" data-en="Photo Studio">Foto Estudio</span>
+              <div class="project-tech-dots">
+                <span class="td">H</span><span class="td">C</span><span class="td">J</span>
+              </div>
+            </div>
+            <h3 class="project-name">Photo Studio Xuca</h3>
+            <p class="project-desc" data-es="Estudio fotográfico cálido y colorido. Tipografía Lora, paleta pastel multicolor. Polaroids animados en el hero, catálogo masonry con hover effect." data-en="Warm and colorful photo studio. Lora typography, multicolor pastel palette. Animated polaroids in hero, masonry catalog with hover effect.">Estudio fotográfico cálido y colorido. Tipografía Lora, paleta pastel multicolor. Polaroids animados en el hero, catálogo masonry con hover effect.</p>
+            <div class="project-features">
+              <span class="pf-chip">ES · EN · FR</span>
+              <span class="pf-chip">Dark / Light</span>
+              <span class="pf-chip">Responsive</span>
+              <span class="pf-chip">Accesible</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- CTA FORMULARIO -->
+      <div class="projects-form-cta">
+        <div class="pfc-inner">
+          <div class="pfc-text">
+            <h2 id="pfc-title" data-es="¿Quieres una para tu negocio?" data-en="Want one for your business?">¿Quieres una para tu negocio?</h2>
+            <p id="pfc-desc" data-es="Completa el formulario con los detalles de tu proyecto. 26 preguntas, menos de 5 minutos, y te respondo con una propuesta personalizada." data-en="Fill out the form with your project details. 26 questions, less than 5 minutes, and I'll respond with a personalized proposal.">Completa el formulario con los detalles de tu proyecto. 26 preguntas, menos de 5 minutos, y te respondo con una propuesta personalizada.</p>
+          </div>
+          <a href="https://forms.gle/sHBFbMPXAibnXnLZ8" target="_blank" rel="noopener" class="btn-primary pfc-btn" id="pfc-btn" data-es="📋 Solicitar mi proyecto" data-en="📋 Request my project">📋 Solicitar mi proyecto</a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <hr class="divider">
+
+  <footer>
+    <a href="index.html" class="footer-logo">Xuca<span>dev</span></a>
+    <p class="footer-copy" id="footer-copy">© 2025 Christopher Lora · Hecho con código y café.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
