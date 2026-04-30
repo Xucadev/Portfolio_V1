@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Gym Xuca — Gimnasio en Santiago, RD. Entrenamiento de alta intensidad, equipos modernos y entrenadores certificados. Abierto de 8AM a 7PM.">
+  <meta name="keywords" content="gimnasio Santiago, Gym Xuca, fitness Santiago, entrenamiento Santiago RD, gym dominicano">
+  <meta name="author" content="Gym Xuca">
+  <meta property="og:title" content="Gym Xuca — Gimnasio en Santiago, RD">
+  <meta property="og:description" content="Sin excusas. Santiago, República Dominicana.">
+  <meta property="og:type" content="local_business">
+
+  <title>Gym Xuca — Santiago, RD</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Panel accesibilidad -->
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-label="Opciones de accesibilidad" aria-hidden="true">
+    <div class="a11y-header">
+      <span id="a11y-title">Accesibilidad</span>
+      <button class="a11y-close" onclick="toggleA11y()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="a11y-options">
+      <button class="a11y-opt" onclick="toggleHighContrast()" id="btn-contrast">
+        <span class="a11y-icon">◑</span><span id="lbl-contrast">Alto contraste</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleBigText()" id="btn-bigtext">
+        <span class="a11y-icon">A+</span><span id="lbl-bigtext">Texto grande</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleUnderlineLinks()" id="btn-links">
+        <span class="a11y-icon">U</span><span id="lbl-links">Subrayar enlaces</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleReadableFont()" id="btn-font">
+        <span class="a11y-icon">Aa</span><span id="lbl-font">Fuente legible</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Controles flotantes -->
+  <div class="floating-controls">
+    <button class="float-btn" onclick="toggleA11y()" aria-label="Accesibilidad">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 8c-4 0-7 2-7 5h14c0-3-3-5-7-5z"/><path d="M8 13v7M16 13v7M10 16h4"/></svg>
+    </button>
+    <button class="float-btn" onclick="toggleTheme()" id="themeBtn" aria-label="Cambiar tema">
+      <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+      <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#inicio" class="nav-logo">GYM<span>XUCA</span></a>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-center" id="navMenu">
+      <a href="#nosotros"  class="nav-link" data-i18n="nav.about">Nosotros</a>
+      <a href="#planes"    class="nav-link" data-i18n="nav.plans">Planes</a>
+      <a href="#clases"    class="nav-link" data-i18n="nav.classes">Clases</a>
+      <a href="#galeria"   class="nav-link" data-i18n="nav.gallery">Galería</a>
+      <a href="#horarios"  class="nav-link" data-i18n="nav.hours">Horarios</a>
+      <a href="#ubicacion" class="nav-link" data-i18n="nav.location">Ubicación</a>
+      <a href="#contacto"  class="nav-link" data-i18n="nav.contact">Contacto</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hb-diag d1"></div>
+        <div class="hb-diag d2"></div>
+        <div class="hb-glow"></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-pre">
+            <span class="pre-dot"></span>
+            <span data-i18n="hero.pre">Santiago · RD · Abierto ahora</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="ht-1" data-i18n="hero.l1">SIN</span>
+            <span class="ht-2" data-i18n="hero.l2">EXCUSAS.</span>
+            <span class="ht-3" data-i18n="hero.l3">SIN LÍMITES.</span>
+          </h1>
+          <p class="hero-sub" data-i18n="hero.sub">El gimnasio que estabas buscando. Equipos de alta gama, entrenadores certificados y una comunidad que te empuja a dar más.</p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn-primary" data-i18n="hero.cta1">Empezar ahora</a>
+            <a href="#planes"   class="btn-ghost"   data-i18n="hero.cta2">Ver planes</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hstat"><span class="hstat-n">7</span><span class="hstat-l" data-i18n="hero.s1">días / semana</span></div>
+            <div class="hstat-div"></div>
+            <div class="hstat"><span class="hstat-n">8AM</span><span class="hstat-l" data-i18n="hero.s2">apertura</span></div>
+            <div class="hstat-div"></div>
+            <div class="hstat"><span class="hstat-n">100%</span><span class="hstat-l" data-i18n="hero.s3">dedicación</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hv-box">
+            <div class="hv-ph"><span>💪</span></div>
+            <div class="hv-corner c1"></div>
+            <div class="hv-corner c2"></div>
+          </div>
+          <div class="hv-tag" data-i18n="hero.vtag">#GymXuca · Santiago</div>
+        </div>
+      </div>
+      <div class="hero-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>FUERZA ✦</span><span>CARDIO ✦</span><span>CROSSFIT ✦</span>
+          <span>SPINNING ✦</span><span>NUTRICIÓN ✦</span><span>YOGA ✦</span>
+          <span>SANTIAGO RD ✦</span><span>GYM XUCA ✦</span>
+          <span>FUERZA ✦</span><span>CARDIO ✦</span><span>CROSSFIT ✦</span>
+          <span>SPINNING ✦</span><span>NUTRICIÓN ✦</span><span>YOGA ✦</span>
+          <span>SANTIAGO RD ✦</span><span>GYM XUCA ✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about" id="nosotros">
+      <div class="about-inner">
+        <div class="about-text">
+          <p class="section-tag" data-i18n="about.tag">Por qué elegirnos</p>
+          <h2 class="section-title" data-i18n="about.title">TU CUERPO.<br><span class="st-acc">TU DECISIÓN.</span></h2>
+          <p data-i18n="about.p1">Gym Xuca nació para romper la excusa de que no hay un buen gimnasio en Santiago. Equipos modernos, clases grupales, entrenadores personales y un ambiente que te motiva desde el primer día.</p>
+          <p data-i18n="about.p2">No importa si estás empezando o si ya eres avanzado. Aquí encontrarás tu lugar y tu comunidad.</p>
+          <a href="#planes" class="btn-primary" data-i18n="about.cta">Ver planes</a>
+        </div>
+        <div class="about-cards">
+          <div class="acard">
+            <div class="acard-icon">🏋️</div>
+            <h3 data-i18n="ac1.t">Equipos modernos</h3>
+            <p data-i18n="ac1.d">Máquinas de última generación para cada grupo muscular.</p>
+          </div>
+          <div class="acard">
+            <div class="acard-icon">👥</div>
+            <h3 data-i18n="ac2.t">Entrenadores certificados</h3>
+            <p data-i18n="ac2.d">Personal calificado que te guía y corrige en cada ejercicio.</p>
+          </div>
+          <div class="acard acard-accent">
+            <div class="acard-icon">🔥</div>
+            <h3 data-i18n="ac3.t">Clases grupales</h3>
+            <p data-i18n="ac3.d">Spinning, crossfit, yoga, zumba y más. Cada semana.</p>
+          </div>
+          <div class="acard">
+            <div class="acard-icon">🥗</div>
+            <h3 data-i18n="ac4.t">Asesoría nutricional</h3>
+            <p data-i18n="ac4.d">Plan alimenticio personalizado para maximizar tus resultados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="plans-section" id="planes">
+      <div class="plans-inner">
+        <div class="plans-header">
+          <p class="section-tag" data-i18n="plans.tag">Membresías</p>
+          <h2 class="section-title" data-i18n="plans.title">ELIGE TU <span class="st-acc">PLAN</span></h2>
+          <p class="section-sub" data-i18n="plans.sub">Sin contratos largos. Sin letras pequeñas. Solo resultados.</p>
+        </div>
+        <div class="plans-grid">
+
+          <div class="plan-card">
+            <div class="plan-label" data-i18n="p1.label">Básico</div>
+            <div class="plan-price">RD$<span>1,200</span><em data-i18n="plan.mo">/mes</em></div>
+            <ul class="plan-features">
+              <li data-i18n="p1.f1">✓ Acceso sala de pesas</li>
+              <li data-i18n="p1.f2">✓ Área de cardio</li>
+              <li data-i18n="p1.f3">✓ Vestuarios y duchas</li>
+              <li class="inactive" data-i18n="p1.f4">✗ Clases grupales</li>
+              <li class="inactive" data-i18n="p1.f5">✗ Entrenador personal</li>
+            </ul>
+            <a href="#contacto" class="btn-plan" data-i18n="plan.cta">Elegir plan</a>
+          </div>
+
+          <div class="plan-card featured">
+            <div class="plan-popular" data-i18n="plan.pop">Más popular</div>
+            <div class="plan-label" data-i18n="p2.label">Pro</div>
+            <div class="plan-price">RD$<span>2,000</span><em data-i18n="plan.mo">/mes</em></div>
+            <ul class="plan-features">
+              <li data-i18n="p2.f1">✓ Todo lo del plan básico</li>
+              <li data-i18n="p2.f2">✓ Clases grupales ilimitadas</li>
+              <li data-i18n="p2.f3">✓ Evaluación física</li>
+              <li data-i18n="p2.f4">✓ App de seguimiento</li>
+              <li class="inactive" data-i18n="p2.f5">✗ Entrenador personal</li>
+            </ul>
+            <a href="#contacto" class="btn-plan btn-plan-accent" data-i18n="plan.cta">Elegir plan</a>
+          </div>
+
+          <div class="plan-card">
+            <div class="plan-label" data-i18n="p3.label">Elite</div>
+            <div class="plan-price">RD$<span>3,500</span><em data-i18n="plan.mo">/mes</em></div>
+            <ul class="plan-features">
+              <li data-i18n="p3.f1">✓ Todo lo del plan Pro</li>
+              <li data-i18n="p3.f2">✓ Entrenador personal (4 sesiones)</li>
+              <li data-i18n="p3.f3">✓ Plan nutricional</li>
+              <li data-i18n="p3.f4">✓ Acceso prioritario</li>
+              <li data-i18n="p3.f5">✓ Suplementos de bienvenida</li>
+            </ul>
+            <a href="#contacto" class="btn-plan" data-i18n="plan.cta">Elegir plan</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASES -->
+    <section class="classes-section" id="clases">
+      <div class="classes-inner">
+        <div class="classes-header">
+          <p class="section-tag" data-i18n="cls.tag">Programas</p>
+          <h2 class="section-title" data-i18n="cls.title">CLASES <span class="st-acc">GRUPALES</span></h2>
+          <p class="section-sub" data-i18n="cls.sub">Entrena acompañado. La energía del grupo multiplica tus resultados.</p>
+        </div>
+        <div class="classes-grid">
+          <div class="cls-card">
+            <div class="cls-icon">🚴</div>
+            <h3 data-i18n="cl1.n">Spinning</h3>
+            <p data-i18n="cl1.d">Cardio de alta intensidad en bicicleta estática. Quema hasta 600 kcal por sesión.</p>
+            <span class="cls-tag" data-i18n="cl1.t">Cardio · 45 min</span>
+          </div>
+          <div class="cls-card featured-cls">
+            <div class="cls-badge" data-i18n="cls.hot">🔥 Popular</div>
+            <div class="cls-icon">⚡</div>
+            <h3 data-i18n="cl2.n">CrossFit</h3>
+            <p data-i18n="cl2.d">Entrenamiento funcional de alta intensidad. Fuerza, resistencia y agilidad al límite.</p>
+            <span class="cls-tag" data-i18n="cl2.t">Funcional · 60 min</span>
+          </div>
+          <div class="cls-card">
+            <div class="cls-icon">🧘</div>
+            <h3 data-i18n="cl3.n">Yoga & Meditación</h3>
+            <p data-i18n="cl3.d">Flexibilidad, equilibrio y bienestar mental. El complemento perfecto al entrenamiento fuerte.</p>
+            <span class="cls-tag" data-i18n="cl3.t">Bienestar · 50 min</span>
+          </div>
+          <div class="cls-card">
+            <div class="cls-icon">💃</div>
+            <h3 data-i18n="cl4.n">Zumba</h3>
+            <p data-i18n="cl4.d">Baile y cardio fusionados en una clase que no parece ejercicio pero sí lo es.</p>
+            <span class="cls-tag" data-i18n="cl4.t">Cardio · 50 min</span>
+          </div>
+          <div class="cls-card">
+            <div class="cls-icon">🥊</div>
+            <h3 data-i18n="cl5.n">Box Fitness</h3>
+            <p data-i18n="cl5.d">Técnicas de boxeo aplicadas al fitness. Coordinación, fuerza y explosividad.</p>
+            <span class="cls-tag" data-i18n="cl5.t">Combate · 55 min</span>
+          </div>
+          <div class="cls-card">
+            <div class="cls-icon">🏃</div>
+            <h3 data-i18n="cl6.n">HIIT</h3>
+            <p data-i18n="cl6.d">Intervalos de alta intensidad. Máximo resultado en el mínimo tiempo posible.</p>
+            <span class="cls-tag" data-i18n="cl6.t">Intensidad · 30 min</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="gallery-section" id="galeria">
+      <div class="gallery-inner">
+        <p class="section-tag" data-i18n="gal.tag">El gym</p>
+        <h2 class="section-title" data-i18n="gal.title">NUESTRAS <span class="st-acc">INSTALACIONES</span></h2>
+        <div class="gallery-grid">
+          <div class="gal-item gi-tall"><div class="gph"><span>🏋️</span><p data-i18n="g1">Sala de pesas</p></div></div>
+          <div class="gal-item"><div class="gph"><span>🚴</span><p data-i18n="g2">Spinning</p></div></div>
+          <div class="gal-item"><div class="gph"><span>⚡</span><p data-i18n="g3">CrossFit</p></div></div>
+          <div class="gal-item gi-wide"><div class="gph"><span>🏃</span><p data-i18n="g4">Área de cardio</p></div></div>
+          <div class="gal-item"><div class="gph"><span>🧘</span><p data-i18n="g5">Yoga</p></div></div>
+        </div>
+        <p class="gal-note" data-i18n="gal.note">✦ Próximamente fotos reales del gimnasio.</p>
+      </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section class="hours-section" id="horarios">
+      <div class="hours-inner">
+        <div class="hours-left">
+          <p class="section-tag" data-i18n="hrs.tag">Cuándo vernos</p>
+          <h2 class="section-title" data-i18n="hrs.title">ABIERTO<br><span class="st-acc">TODOS LOS DÍAS.</span></h2>
+          <p data-i18n="hrs.desc">No hay días de descanso del progreso. Abrimos 7 días a la semana para que nunca tengas que saltarte tu entrenamiento.</p>
+          <a href="#contacto" class="btn-primary" data-i18n="hrs.cta">Inscribirse ahora</a>
+        </div>
+        <div class="hours-right">
+          <div class="hours-display">
+            <div class="hd-banner">
+              <span class="hd-t">8<em>AM</em></span>
+              <div class="hd-sep">
+                <span data-i18n="hrs.to">a las</span>
+              </div>
+              <span class="hd-t">7<em>PM</em></span>
+            </div>
+            <div class="hours-list">
+              <div class="h-row"><span data-i18n="hrs.mon">Lunes</span><span class="h-live"></span><span class="h-t">8:00 AM – 7:00 PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.tue">Martes</span><span class="h-live"></span><span class="h-t">8:00 AM – 7:00 PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.wed">Miércoles</span><span class="h-live"></span><span class="h-t">8:00 AM – 7:00 PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.thu">Jueves</span><span class="h-live"></span><span class="h-t">8:00 AM – 7:00 PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.fri">Viernes</span><span class="h-live"></span><span class="h-t">8:00 AM – 7:00 PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.sat">Sábado</span><span class="h-live"></span><span class="h-t">8:00 AM – 7:00 PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.sun">Domingo</span><span class="h-live"></span><span class="h-t">8:00 AM – 7:00 PM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="location-section" id="ubicacion">
+      <div class="location-inner">
+        <div class="location-text">
+          <p class="section-tag" data-i18n="loc.tag">Dónde estamos</p>
+          <h2 class="section-title" data-i18n="loc.title">ENCUÉNTRANOS<br><span class="st-acc">EN SANTIAGO.</span></h2>
+          <p data-i18n="loc.desc">Ubicados en Santiago, República Dominicana. Fácil acceso, estacionamiento disponible y zona segura para que te concentres solo en entrenar.</p>
+          <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="btn-primary map-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="loc.cta">Abrir en Google Maps</span>
+          </a>
+        </div>
+        <div class="location-map">
+          <div class="map-mock">
+            <div class="map-grid-bg" aria-hidden="true"></div>
+            <div class="map-marker-wrap">
+              <div class="map-pulse"></div>
+              <div class="map-pin">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="var(--accent)" stroke="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="black"/></svg>
+              </div>
+            </div>
+            <p class="map-name">Gym Xuca · Santiago, RD</p>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="map-link" data-i18n="loc.open">Ver en Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-section" id="contacto">
+      <div class="contact-inner">
+        <div class="contact-header">
+          <p class="section-tag" data-i18n="con.tag">Únete al gym</p>
+          <h2 class="section-title" data-i18n="con.title">¿LISTO PARA<br><span class="st-acc">EMPEZAR?</span></h2>
+          <p class="section-sub" data-i18n="con.sub">Escríbenos por WhatsApp o llámanos. Te orientamos con el plan que mejor se adapta a tus metas.</p>
+        </div>
+        <div class="contact-cards">
+          <a href="https://wa.me/18090000000" target="_blank" rel="noopener" class="con-card wa-card">
+            <div class="con-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.85L.057 23.09a.75.75 0 0 0 .92.92l5.255-1.476A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.75 9.75 0 0 1-4.95-1.35l-.354-.212-3.668 1.03 1.03-3.655-.224-.367A9.75 9.75 0 1 1 12 21.75z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.wa">WhatsApp · Inscripciones</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+            <span class="con-arrow">→</span>
+          </a>
+          <a href="tel:+18090000000" class="con-card">
+            <div class="con-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p1">Teléfono 1</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+          </a>
+          <a href="tel:+18290000000" class="con-card">
+            <div class="con-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p2">Teléfono 2</span>
+              <span class="con-val">829-000-0000</span>
+            </div>
+          </a>
+          <a href="mailto:example@xucaphe.com" class="con-card">
+            <div class="con-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.email">Correo</span>
+              <span class="con-val">example@xucaphe.com</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Redes -->
+        <div class="social-wrap">
+          <p class="social-label" data-i18n="con.follow">Síguenos</p>
+          <div class="social-row">
+            <a href="#" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+              TikTok
+            </a>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">GYM<em>XUCA</em></span>
+        <p data-i18n="footer.desc">Gimnasio Profesional · Santiago, RD</p>
+      </div>
+      <div class="footer-links">
+        <a href="#planes"   data-i18n="nav.plans">Planes</a>
+        <a href="#clases"   data-i18n="nav.classes">Clases</a>
+        <a href="#horarios" data-i18n="nav.hours">Horarios</a>
+        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 Gym Xuca · Santiago, República Dominicana</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

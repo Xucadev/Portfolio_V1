@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Photo Studio Xuca — Estudio fotográfico en Santiago, RD. Sesiones de retrato, familia, quinceañera, corporativo y más. Abierto de 8AM a 7PM.">
+  <meta name="keywords" content="foto estudio Santiago, Photo Studio Xuca, fotógrafo Santiago RD, sesión de fotos Santiago, quinceañera fotografía dominicana">
+  <meta name="author" content="Photo Studio Xuca">
+  <meta property="og:title" content="Photo Studio Xuca — Santiago, RD">
+  <meta property="og:description" content="Cada momento merece ser recordado. Santiago, República Dominicana.">
+  <meta property="og:type" content="local_business">
+
+  <title>Photo Studio Xuca — Estudio Fotográfico en Santiago</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Panel accesibilidad -->
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-label="Opciones de accesibilidad" aria-hidden="true">
+    <div class="a11y-header">
+      <span id="a11y-title">Accesibilidad</span>
+      <button class="a11y-close" onclick="toggleA11y()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="a11y-options">
+      <button class="a11y-opt" onclick="toggleHighContrast()" id="btn-contrast">
+        <span class="a11y-icon">◑</span><span id="lbl-contrast">Alto contraste</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleBigText()" id="btn-bigtext">
+        <span class="a11y-icon">A+</span><span id="lbl-bigtext">Texto grande</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleUnderlineLinks()" id="btn-links">
+        <span class="a11y-icon">U</span><span id="lbl-links">Subrayar enlaces</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleReadableFont()" id="btn-font">
+        <span class="a11y-icon">Aa</span><span id="lbl-font">Fuente legible</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Controles flotantes -->
+  <div class="floating-controls">
+    <button class="float-btn" onclick="toggleA11y()" aria-label="Accesibilidad">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 8c-4 0-7 2-7 5h14c0-3-3-5-7-5z"/><path d="M8 13v7M16 13v7M10 16h4"/></svg>
+    </button>
+    <button class="float-btn" onclick="toggleTheme()" id="themeBtn" aria-label="Cambiar tema">
+      <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+    </button>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#inicio" class="nav-logo">📷 <span>Photo</span> Studio <em>Xuca</em></a>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-center" id="navMenu">
+      <a href="#nosotros"  class="nav-link" data-i18n="nav.about">Nosotros</a>
+      <a href="#servicios" class="nav-link" data-i18n="nav.services">Servicios</a>
+      <a href="#catalogo"  class="nav-link" data-i18n="nav.catalog">Catálogo</a>
+      <a href="#galeria"   class="nav-link" data-i18n="nav.gallery">Galería</a>
+      <a href="#horarios"  class="nav-link" data-i18n="nav.hours">Horarios</a>
+      <a href="#ubicacion" class="nav-link" data-i18n="nav.location">Ubicación</a>
+      <a href="#contacto"  class="nav-link" data-i18n="nav.contact">Contacto</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-confetti" aria-hidden="true">
+        <div class="conf c1"></div>
+        <div class="conf c2"></div>
+        <div class="conf c3"></div>
+        <div class="conf c4"></div>
+        <div class="conf c5"></div>
+        <div class="conf c6"></div>
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="tag-cam">✦</span>
+            <span data-i18n="hero.tag">Santiago · RD · Est. 2024</span>
+          </div>
+          <h1 class="hero-title">
+            <span data-i18n="hero.l1">Cada momento</span>
+            <em data-i18n="hero.l2">merece ser</em>
+            <span data-i18n="hero.l3">recordado.</span>
+          </h1>
+          <p class="hero-sub" data-i18n="hero.sub">Fotografía profesional con alma local. Capturamos tus momentos más especiales con amor, luz y talento en Santiago.</p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn-primary" data-i18n="hero.cta1">Reservar sesión</a>
+            <a href="#servicios" class="btn-ghost"  data-i18n="hero.cta2">Ver servicios</a>
+          </div>
+          <div class="hero-chips">
+            <span class="chip coral" data-i18n="hc1">Retratos</span>
+            <span class="chip mint" data-i18n="hc2">Quinceañeras</span>
+            <span class="chip lavender" data-i18n="hc3">Familia</span>
+            <span class="chip sun" data-i18n="hc4">Corporativo</span>
+            <span class="chip sky" data-i18n="hc5">Eventos</span>
+          </div>
+        </div>
+
+        <div class="hero-polaroids" aria-hidden="true">
+          <div class="polaroid p-back">
+            <div class="pol-img"><span>🌸</span></div>
+            <p>Sesión especial</p>
+          </div>
+          <div class="polaroid p-mid">
+            <div class="pol-img"><span>👨‍👩‍👧</span></div>
+            <p>Familia Rodríguez</p>
+          </div>
+          <div class="polaroid p-front">
+            <div class="pol-img"><span>✨</span></div>
+            <p>Quinceañera 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg2)"/></svg>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about" id="nosotros">
+      <div class="about-inner">
+        <div class="about-visual">
+          <div class="about-frame">
+            <div class="af-img"><span>📸</span></div>
+            <div class="af-tag" data-i18n="about.tag2">Capturando momentos</div>
+          </div>
+          <div class="about-mini-cards">
+            <div class="mini-card mc-coral">
+              <span class="mc-n">7d</span>
+              <span class="mc-l" data-i18n="ab.days">abierto</span>
+            </div>
+            <div class="mini-card mc-mint">
+              <span class="mc-n">100%</span>
+              <span class="mc-l" data-i18n="ab.heart">con corazón</span>
+            </div>
+            <div class="mini-card mc-lav">
+              <span class="mc-n">STG</span>
+              <span class="mc-l" data-i18n="ab.city">Santiago</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-tag" data-i18n="about.tag">Nuestra historia</p>
+          <h2 class="section-title" data-i18n="about.title">Más que fotos,<br><em>guardamos recuerdos.</em></h2>
+          <p data-i18n="about.p1">Photo Studio Xuca es un espacio cálido y profesional donde cada sesión está diseñada para que te sientas cómodo, natural y feliz. Creemos que la mejor foto es la que captura quien realmente eres.</p>
+          <p data-i18n="about.p2">Con equipos de alta gama, fondos variados y un equipo con ojo artístico, convertimos cualquier momento en una imagen que querrás guardar para siempre.</p>
+          <a href="#contacto" class="btn-primary" data-i18n="about.cta">Agendar sesión</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services-section" id="servicios">
+      <div class="services-inner">
+        <div class="srv-header">
+          <p class="section-tag" data-i18n="srv.tag">Lo que ofrecemos</p>
+          <h2 class="section-title" data-i18n="srv.title">Nuestros <em>servicios</em></h2>
+          <p class="section-sub" data-i18n="srv.sub">Para cada tipo de sesión, tenemos el ambiente, el equipo y la experiencia perfecta.</p>
+        </div>
+        <div class="srv-grid">
+
+          <div class="srv-card coral-card">
+            <div class="srv-emoji">🎀</div>
+            <h3 data-i18n="s1.n">Quinceañeras</h3>
+            <p data-i18n="s1.d">Tu día más especial, capturado para siempre. Sesión completa con múltiples cambios de atuendo y escenografías exclusivas.</p>
+            <span class="srv-tag coral-tag" data-i18n="s1.t">Desde RD$4,500</span>
+          </div>
+          <div class="srv-card mint-card featured-srv">
+            <div class="srv-pop" data-i18n="srv.pop">⭐ Más solicitado</div>
+            <div class="srv-emoji">👨‍👩‍👧‍👦</div>
+            <h3 data-i18n="s2.n">Sesión familiar</h3>
+            <p data-i18n="s2.d">Retratos naturales y espontáneos para toda la familia. Capturamos la conexión y el amor que los une.</p>
+            <span class="srv-tag mint-tag" data-i18n="s2.t">Desde RD$2,500</span>
+          </div>
+          <div class="srv-card lav-card">
+            <div class="srv-emoji">🌹</div>
+            <h3 data-i18n="s3.n">Retratos individuales</h3>
+            <p data-i18n="s3.d">Headshots, sesiones artísticas o simplemente quieres una foto increíble tuya. Te hacemos lucir espectacular.</p>
+            <span class="srv-tag lav-tag" data-i18n="s3.t">Desde RD$1,200</span>
+          </div>
+          <div class="srv-card sun-card">
+            <div class="srv-emoji">💼</div>
+            <h3 data-i18n="s4.n">Corporativo & Branding</h3>
+            <p data-i18n="s4.d">Fotos de equipo, headshots profesionales e imágenes de marca. Proyecta una imagen seria y moderna.</p>
+            <span class="srv-tag sun-tag" data-i18n="s4.t">Desde RD$3,000</span>
+          </div>
+          <div class="srv-card sky-card">
+            <div class="srv-emoji">🎉</div>
+            <h3 data-i18n="s5.n">Eventos & Celebraciones</h3>
+            <p data-i18n="s5.d">Cumpleaños, graduaciones, bautizos, bodas y todo evento que merezca recordarse. Cobertura completa.</p>
+            <span class="srv-tag sky-tag" data-i18n="s5.t">Consultar precio</span>
+          </div>
+          <div class="srv-card peach-card">
+            <div class="srv-emoji">🍼</div>
+            <h3 data-i18n="s6.n">Bebés & Maternidad</h3>
+            <p data-i18n="s6.d">Sesiones newborn, embarazo y primeros pasos. Los momentos más tiernos de la vida, capturados con delicadeza.</p>
+            <span class="srv-tag peach-tag" data-i18n="s6.t">Desde RD$1,800</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="catalog-section" id="catalogo">
+      <div class="catalog-inner">
+        <div class="cat-header">
+          <p class="section-tag" data-i18n="cat.tag">Inspiración</p>
+          <h2 class="section-title" data-i18n="cat.title">Nuestro <em>trabajo</em></h2>
+          <p class="section-sub" data-i18n="cat.sub">Una muestra de los estilos y sesiones que puedes tener en Photo Studio Xuca.</p>
+        </div>
+        <div class="cat-tabs">
+          <button class="cat-tab active" data-cat="all" onclick="filterCat(this)" data-i18n="cat.all">Todos</button>
+          <button class="cat-tab" data-cat="retrato" onclick="filterCat(this)" data-i18n="cat.c1">Retratos</button>
+          <button class="cat-tab" data-cat="familia" onclick="filterCat(this)" data-i18n="cat.c2">Familia</button>
+          <button class="cat-tab" data-cat="evento" onclick="filterCat(this)" data-i18n="cat.c3">Eventos</button>
+          <button class="cat-tab" data-cat="corporativo" onclick="filterCat(this)" data-i18n="cat.c4">Corporativo</button>
+        </div>
+        <div class="cat-masonry" id="catGrid">
+
+          <div class="cat-item ci-tall" data-cat="retrato">
+            <div class="ci-img"><span>🌹</span></div>
+            <div class="ci-hover">
+              <h3 data-i18n="ci1.n">Retrato artístico</h3>
+              <p data-i18n="ci1.d">Sesión individual con iluminación de estudio.</p>
+            </div>
+          </div>
+          <div class="cat-item" data-cat="familia">
+            <div class="ci-img"><span>👨‍👩‍👧</span></div>
+            <div class="ci-hover">
+              <h3 data-i18n="ci2.n">Familia en estudio</h3>
+              <p data-i18n="ci2.d">Sesión cálida con fondo neutro.</p>
+            </div>
+          </div>
+          <div class="cat-item" data-cat="evento">
+            <div class="ci-img"><span>🎀</span></div>
+            <div class="ci-hover">
+              <h3 data-i18n="ci3.n">Quinceañera</h3>
+              <p data-i18n="ci3.d">Celebración llena de color y emoción.</p>
+            </div>
+          </div>
+          <div class="cat-item ci-wide" data-cat="corporativo">
+            <div class="ci-img"><span>💼</span></div>
+            <div class="ci-hover">
+              <h3 data-i18n="ci4.n">Equipo corporativo</h3>
+              <p data-i18n="ci4.d">Headshots profesionales para tu empresa.</p>
+            </div>
+          </div>
+          <div class="cat-item" data-cat="familia">
+            <div class="ci-img"><span>🍼</span></div>
+            <div class="ci-hover">
+              <h3 data-i18n="ci5.n">Newborn</h3>
+              <p data-i18n="ci5.d">Los primeros días del bebé, eternizados.</p>
+            </div>
+          </div>
+          <div class="cat-item ci-tall" data-cat="evento">
+            <div class="ci-img"><span>🎉</span></div>
+            <div class="ci-hover">
+              <h3 data-i18n="ci6.n">Graduación</h3>
+              <p data-i18n="ci6.d">El logro que tanto merecías, capturado.</p>
+            </div>
+          </div>
+          <div class="cat-item" data-cat="retrato">
+            <div class="ci-img"><span>✨</span></div>
+            <div class="ci-hover">
+              <h3 data-i18n="ci7.n">Sesión glamour</h3>
+              <p data-i18n="ci7.d">Luz, composición y elegancia personal.</p>
+            </div>
+          </div>
+          <div class="cat-item" data-cat="familia">
+            <div class="ci-img"><span>🤰</span></div>
+            <div class="ci-hover">
+              <h3 data-i18n="ci8.n">Maternidad</h3>
+              <p data-i18n="ci8.d">La belleza del embarazo en su máxima expresión.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="gallery-section" id="galeria">
+      <div class="gallery-inner">
+        <p class="section-tag" data-i18n="gal.tag">El estudio</p>
+        <h2 class="section-title" data-i18n="gal.title">Nuestro <em>espacio</em></h2>
+        <div class="gallery-grid">
+          <div class="gal-item gi-tall"><div class="gph coral-gph"><span>📸</span><p data-i18n="g1">El estudio</p></div></div>
+          <div class="gal-item"><div class="gph mint-gph"><span>💡</span><p data-i18n="g2">Iluminación</p></div></div>
+          <div class="gal-item"><div class="gph lav-gph"><span>🎨</span><p data-i18n="g3">Fondos</p></div></div>
+          <div class="gal-item gi-wide"><div class="gph sun-gph"><span>🌸</span><p data-i18n="g4">Decorados especiales</p></div></div>
+          <div class="gal-item"><div class="gph sky-gph"><span>🎞️</span><p data-i18n="g5">Postproducción</p></div></div>
+        </div>
+        <p class="gal-note" data-i18n="gal.note">✦ Próximamente fotos reales del estudio.</p>
+      </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section class="hours-section" id="horarios">
+      <div class="hours-inner">
+        <div class="hours-left">
+          <p class="section-tag" data-i18n="hrs.tag">Cuándo visitarnos</p>
+          <h2 class="section-title" data-i18n="hrs.title">Abierto <em>toda la semana.</em></h2>
+          <p data-i18n="hrs.desc">Estamos disponibles todos los días para que puedas agendar tu sesión en el momento que más te convenga. También puedes reservar con anticipación.</p>
+          <a href="#contacto" class="btn-primary" data-i18n="hrs.cta">Reservar por WhatsApp</a>
+        </div>
+        <div class="hours-right">
+          <div class="hours-card">
+            <div class="hc-top">
+              <div class="hc-emoji">📸</div>
+              <div class="hc-times">
+                <span class="hc-t">8<em>AM</em></span>
+                <span class="hc-dash">—</span>
+                <span class="hc-t">7<em>PM</em></span>
+              </div>
+              <div class="hc-badge">
+                <span class="live-dot"></span>
+                <span data-i18n="hrs.open">Abierto hoy</span>
+              </div>
+            </div>
+            <div class="hours-list">
+              <div class="h-row coral-row"><span data-i18n="hrs.mon">Lunes</span><span class="h-dot"></span><span class="h-t">8AM – 7PM</span></div>
+              <div class="h-row mint-row"><span data-i18n="hrs.tue">Martes</span><span class="h-dot"></span><span class="h-t">8AM – 7PM</span></div>
+              <div class="h-row lav-row"><span data-i18n="hrs.wed">Miércoles</span><span class="h-dot"></span><span class="h-t">8AM – 7PM</span></div>
+              <div class="h-row sun-row"><span data-i18n="hrs.thu">Jueves</span><span class="h-dot"></span><span class="h-t">8AM – 7PM</span></div>
+              <div class="h-row sky-row"><span data-i18n="hrs.fri">Viernes</span><span class="h-dot"></span><span class="h-t">8AM – 7PM</span></div>
+              <div class="h-row coral-row"><span data-i18n="hrs.sat">Sábado</span><span class="h-dot"></span><span class="h-t">8AM – 7PM</span></div>
+              <div class="h-row mint-row"><span data-i18n="hrs.sun">Domingo</span><span class="h-dot"></span><span class="h-t">8AM – 7PM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="location-section" id="ubicacion">
+      <div class="location-inner">
+        <div class="location-text">
+          <p class="section-tag" data-i18n="loc.tag">Dónde estamos</p>
+          <h2 class="section-title" data-i18n="loc.title">Visítanos en <em>Santiago.</em></h2>
+          <p data-i18n="loc.desc">Estamos en el corazón de Santiago, República Dominicana. Espacio amplio, climatizado y con estacionamiento disponible para que llegues cómodo a tu sesión.</p>
+          <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="btn-primary map-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="loc.cta">Abrir en Google Maps</span>
+          </a>
+        </div>
+        <div class="location-map">
+          <div class="map-mock">
+            <div class="map-petal-bg" aria-hidden="true">
+              <div class="mpb mp1"></div>
+              <div class="mpb mp2"></div>
+              <div class="mpb mp3"></div>
+            </div>
+            <div class="map-center">
+              <div class="map-bounce">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="var(--coral)" stroke="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="white"/></svg>
+              </div>
+            </div>
+            <p class="map-name">Photo Studio Xuca · Santiago, RD</p>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="map-link" data-i18n="loc.open">Ver en Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-section" id="contacto">
+      <div class="contact-inner">
+        <div class="contact-header">
+          <p class="section-tag" data-i18n="con.tag">Agenda tu sesión</p>
+          <h2 class="section-title" data-i18n="con.title">¿Lista para <em>brillar?</em></h2>
+          <p class="section-sub" data-i18n="con.sub">Escríbenos por WhatsApp o llámanos. Te ayudamos a elegir el paquete ideal y reservamos tu fecha.</p>
+        </div>
+        <div class="contact-cards">
+          <a href="https://wa.me/18090000000" target="_blank" rel="noopener" class="con-card wa-card">
+            <div class="con-icon wa-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.85L.057 23.09a.75.75 0 0 0 .92.92l5.255-1.476A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.75 9.75 0 0 1-4.95-1.35l-.354-.212-3.668 1.03 1.03-3.655-.224-.367A9.75 9.75 0 1 1 12 21.75z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.wa">WhatsApp · Reservas</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+            <span class="con-arrow">→</span>
+          </a>
+          <a href="tel:+18090000000" class="con-card coral-con">
+            <div class="con-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p1">Teléfono 1</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+          </a>
+          <a href="tel:+18290000000" class="con-card mint-con">
+            <div class="con-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p2">Teléfono 2</span>
+              <span class="con-val">829-000-0000</span>
+            </div>
+          </a>
+          <a href="mailto:example@xucaphe.com" class="con-card lav-con">
+            <div class="con-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.email">Correo</span>
+              <span class="con-val">example@xucaphe.com</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Redes -->
+        <div class="social-wrap">
+          <p class="social-label" data-i18n="con.follow">Síguenos en redes</p>
+          <div class="social-row">
+            <a href="#" class="social-pill sp-coral" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="social-pill sp-lav" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="social-pill sp-sky" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+              TikTok
+            </a>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" class="social-pill sp-mint" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">📷 Photo Studio <em>Xuca</em></span>
+        <p data-i18n="footer.desc">Estudio Fotográfico · Santiago, RD</p>
+      </div>
+      <div class="footer-links">
+        <a href="#servicios" data-i18n="nav.services">Servicios</a>
+        <a href="#catalogo"  data-i18n="nav.catalog">Catálogo</a>
+        <a href="#horarios"  data-i18n="nav.hours">Horarios</a>
+        <a href="#contacto"  data-i18n="nav.contact">Contacto</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 Photo Studio Xuca · Santiago, República Dominicana</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

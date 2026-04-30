@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Deli Xuca — Cafetería en Santiago, RD. Café artesanal, desayunos deliciosos, postres y snacks. Abierto de 8AM a 7PM todos los días.">
+  <meta name="keywords" content="cafetería Santiago, Deli Xuca, café Santiago RD, desayunos Santiago, pasteles café dominicano">
+  <meta name="author" content="Deli Xuca">
+  <meta property="og:title" content="Deli Xuca — Cafetería en Santiago, RD">
+  <meta property="og:description" content="El rincón favorito de Santiago. Café, comida y buena vibra.">
+  <meta property="og:type" content="restaurant">
+
+  <title>Deli Xuca — Cafetería en Santiago</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Panel accesibilidad -->
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-label="Opciones de accesibilidad" aria-hidden="true">
+    <div class="a11y-header">
+      <span id="a11y-title">Accesibilidad</span>
+      <button class="a11y-close" onclick="toggleA11y()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="a11y-options">
+      <button class="a11y-opt" onclick="toggleHighContrast()" id="btn-contrast">
+        <span class="a11y-icon">◑</span><span id="lbl-contrast">Alto contraste</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleBigText()" id="btn-bigtext">
+        <span class="a11y-icon">A+</span><span id="lbl-bigtext">Texto grande</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleUnderlineLinks()" id="btn-links">
+        <span class="a11y-icon">U</span><span id="lbl-links">Subrayar enlaces</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleReadableFont()" id="btn-font">
+        <span class="a11y-icon">Aa</span><span id="lbl-font">Fuente legible</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Controles flotantes -->
+  <div class="floating-controls">
+    <button class="float-btn" onclick="toggleA11y()" aria-label="Accesibilidad">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 8c-4 0-7 2-7 5h14c0-3-3-5-7-5z"/><path d="M8 13v7M16 13v7M10 16h4"/></svg>
+    </button>
+    <button class="float-btn" onclick="toggleTheme()" id="themeBtn" aria-label="Cambiar tema">
+      <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+    </button>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#inicio" class="nav-logo">☕ Deli <em>Xuca</em></a>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-center" id="navMenu">
+      <a href="#nosotros"  class="nav-link" data-i18n="nav.about">Nosotros</a>
+      <a href="#menu"      class="nav-link" data-i18n="nav.menu">Menú</a>
+      <a href="#catalogo"  class="nav-link" data-i18n="nav.catalog">Catálogo</a>
+      <a href="#galeria"   class="nav-link" data-i18n="nav.gallery">Galería</a>
+      <a href="#horarios"  class="nav-link" data-i18n="nav.hours">Horarios</a>
+      <a href="#ubicacion" class="nav-link" data-i18n="nav.location">Ubicación</a>
+      <a href="#contacto"  class="nav-link" data-i18n="nav.contact">Contacto</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-blobs" aria-hidden="true">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b3"></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span>☕</span>
+            <span data-i18n="hero.tag">Santiago · RD · Abierto hoy</span>
+          </div>
+          <h1 class="hero-title">
+            <span data-i18n="hero.l1">El rincón</span>
+            <em data-i18n="hero.l2">favorito</em>
+            <span data-i18n="hero.l3">de Santiago.</span>
+          </h1>
+          <p class="hero-sub" data-i18n="hero.sub">Café artesanal, desayunos ricos y postres que hacen daño al bolsillo pero bien al alma. Ven, siéntate, disfruta.</p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn-primary" data-i18n="hero.cta1">Ver el menú</a>
+            <a href="#contacto" class="btn-ghost" data-i18n="hero.cta2">¿Cómo llegar?</a>
+          </div>
+          <div class="hero-badges">
+            <div class="hbadge green-b"><span>☕</span><span data-i18n="hb1">Café artesanal</span></div>
+            <div class="hbadge yellow-b"><span>🥐</span><span data-i18n="hb2">Desayunos</span></div>
+            <div class="hbadge terra-b"><span>🎂</span><span data-i18n="hb3">Postres</span></div>
+            <div class="hbadge cream-b"><span>🥪</span><span data-i18n="hb4">Snacks</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="cup-card">
+            <div class="cup-frame">
+              <span class="cup-emoji">☕</span>
+              <div class="cup-steam s1"></div>
+              <div class="cup-steam s2"></div>
+              <div class="cup-steam s3"></div>
+            </div>
+            <div class="cup-tag" data-i18n="hero.vtag">Café del día</div>
+          </div>
+          <div class="hero-float-tag ft1" data-i18n="hero.ft1">¡Recién hecho!</div>
+          <div class="hero-float-tag ft2">8AM – 7PM ✦</div>
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+          <path d="M0,35 C400,70 1000,0 1440,35 L1440,70 L0,70 Z" fill="var(--bg2)"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about" id="nosotros">
+      <div class="about-inner">
+        <div class="about-text">
+          <p class="section-tag" data-i18n="about.tag">Nuestra historia</p>
+          <h2 class="section-title" data-i18n="about.title">Un lugar hecho<br><em>con sabor y corazón.</em></h2>
+          <p data-i18n="about.p1">Deli Xuca nació de una idea simple: crear el espacio donde Santiago se tome un descanso. Un café donde el olor a pan recién horneado y el sonido de una buena conversación se mezclan sin apuro.</p>
+          <p data-i18n="about.p2">Ingredientes frescos, recetas propias y un equipo que pone cariño en cada taza y cada plato. Así somos nosotros.</p>
+          <a href="#menu" class="btn-primary" data-i18n="about.cta">Explorar el menú</a>
+        </div>
+        <div class="about-cards">
+          <div class="acard green-card">
+            <span class="acard-icon">🌿</span>
+            <h3 data-i18n="ac1.t">Ingredientes frescos</h3>
+            <p data-i18n="ac1.d">Compramos local. Frescos todos los días, sin excepción.</p>
+          </div>
+          <div class="acard yellow-card">
+            <span class="acard-icon">☕</span>
+            <h3 data-i18n="ac2.t">Café artesanal</h3>
+            <p data-i18n="ac2.d">Granos seleccionados, preparados con técnica y pasión.</p>
+          </div>
+          <div class="acard terra-card">
+            <span class="acard-icon">🎂</span>
+            <h3 data-i18n="ac3.t">Postres caseros</h3>
+            <p data-i18n="ac3.d">Recetas propias, horneadas en el día. Irresistibles.</p>
+          </div>
+          <div class="acard cream-card">
+            <span class="acard-icon">😊</span>
+            <h3 data-i18n="ac4.t">Ambiente acogedor</h3>
+            <p data-i18n="ac4.d">El lugar donde quieres quedarte un rato más.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENÚ -->
+    <section class="menu-section" id="menu">
+      <div class="menu-inner">
+        <div class="menu-header">
+          <p class="section-tag" data-i18n="menu.tag">Lo que servimos</p>
+          <h2 class="section-title" data-i18n="menu.title">Nuestro <em>menú</em></h2>
+          <p class="section-sub" data-i18n="menu.sub">Todo preparado con amor. Cada ítem, una razón para volver.</p>
+        </div>
+        <div class="menu-tabs">
+          <button class="menu-tab active" data-cat="cafe" onclick="filterMenu(this)" data-i18n="mt1">Café</button>
+          <button class="menu-tab" data-cat="desayuno" onclick="filterMenu(this)" data-i18n="mt2">Desayunos</button>
+          <button class="menu-tab" data-cat="postre" onclick="filterMenu(this)" data-i18n="mt3">Postres</button>
+          <button class="menu-tab" data-cat="snack" onclick="filterMenu(this)" data-i18n="mt4">Snacks</button>
+          <button class="menu-tab" data-cat="bebida" onclick="filterMenu(this)" data-i18n="mt5">Bebidas</button>
+        </div>
+        <div class="menu-grid" id="menuGrid">
+
+          <!-- Café -->
+          <div class="menu-card mc-green" data-cat="cafe">
+            <div class="mc-emoji">☕</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="c1.n">Espresso</h3><span class="mc-price">RD$80</span></div>
+              <p data-i18n="c1.d">Puro, intenso y aromático. El inicio perfecto del día.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-green" data-cat="cafe">
+            <div class="mc-emoji">🥛</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="c2.n">Latte artesanal</h3><span class="mc-price">RD$120</span></div>
+              <p data-i18n="c2.d">Espresso con leche vaporizada y arte en la taza.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-green" data-cat="cafe">
+            <div class="mc-emoji">🧊</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="c3.n">Cold brew</h3><span class="mc-price">RD$140</span></div>
+              <p data-i18n="c3.d">Café frío con 12 horas de extracción. Suave y potente.</p>
+            </div>
+          </div>
+
+          <!-- Desayunos -->
+          <div class="menu-card mc-yellow" data-cat="desayuno" style="display:none">
+            <div class="mc-emoji">🥐</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="d1.n">Mangú con los tres</h3><span class="mc-price">RD$180</span></div>
+              <p data-i18n="d1.d">El clásico dominicano. Plátano majado, huevos, salami y queso frito.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-yellow" data-cat="desayuno" style="display:none">
+            <div class="mc-emoji">☕</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="d2.n">Desayuno completo</h3><span class="mc-price">RD$250</span></div>
+              <p data-i18n="d2.d">Mangú, huevos, salami, queso, jugo natural y café. Todo incluido.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-yellow" data-cat="desayuno" style="display:none">
+            <div class="mc-emoji">🍳</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="d3.n">Tostadas con aguacate</h3><span class="mc-price">RD$150</span></div>
+              <p data-i18n="d3.d">Pan artesanal tostado con aguacate fresco, sal y limón.</p>
+            </div>
+          </div>
+
+          <!-- Postres -->
+          <div class="menu-card mc-terra" data-cat="postre" style="display:none">
+            <div class="mc-emoji">🍰</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="p1.n">Tres leches</h3><span class="mc-price">RD$110</span></div>
+              <p data-i18n="p1.d">Bizcocho húmedo bañado en tres leches. El favorito de siempre.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-terra" data-cat="postre" style="display:none">
+            <div class="mc-emoji">🍫</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="p2.n">Brownie caliente</h3><span class="mc-price">RD$130</span></div>
+              <p data-i18n="p2.d">Brownie de chocolate con helado de vainilla. Pecado delicioso.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-terra" data-cat="postre" style="display:none">
+            <div class="mc-emoji">🍮</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="p3.n">Flan de coco</h3><span class="mc-price">RD$100</span></div>
+              <p data-i18n="p3.d">Flan cremoso con leche de coco y caramelo artesanal.</p>
+            </div>
+          </div>
+
+          <!-- Snacks -->
+          <div class="menu-card mc-cream" data-cat="snack" style="display:none">
+            <div class="mc-emoji">🥪</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="s1.n">Sándwich del día</h3><span class="mc-price">RD$160</span></div>
+              <p data-i18n="s1.d">Pan artesanal con relleno fresco del día. Varía según disponibilidad.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-cream" data-cat="snack" style="display:none">
+            <div class="mc-emoji">🧆</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="s2.n">Empanadas caseras</h3><span class="mc-price">RD$70</span></div>
+              <p data-i18n="s2.d">Rellenas de queso, pollo o carne. Receta de la casa.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-cream" data-cat="snack" style="display:none">
+            <div class="mc-emoji">🥗</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="s3.n">Ensalada fresca</h3><span class="mc-price">RD$140</span></div>
+              <p data-i18n="s3.d">Vegetales frescos, aderezo de la casa y crutones artesanales.</p>
+            </div>
+          </div>
+
+          <!-- Bebidas -->
+          <div class="menu-card mc-green" data-cat="bebida" style="display:none">
+            <div class="mc-emoji">🥤</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="b1.n">Jugo natural</h3><span class="mc-price">RD$90</span></div>
+              <p data-i18n="b1.d">Chinola, naranja, lechosa o tamarindo. Frescos del día.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-green" data-cat="bebida" style="display:none">
+            <div class="mc-emoji">🧃</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="b2.n">Batida tropical</h3><span class="mc-price">RD$120</span></div>
+              <p data-i18n="b2.d">Frutas tropicales con leche o agua de coco. Espesa y cremosa.</p>
+            </div>
+          </div>
+          <div class="menu-card mc-green" data-cat="bebida" style="display:none">
+            <div class="mc-emoji">🍵</div>
+            <div class="mc-info">
+              <div class="mc-row"><h3 data-i18n="b3.n">Té artesanal</h3><span class="mc-price">RD$80</span></div>
+              <p data-i18n="b3.d">Variedad de tés especiales. Caliente o frío según prefieras.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO / ESPECIALIDADES -->
+    <section class="catalog-section" id="catalogo">
+      <div class="catalog-inner">
+        <p class="section-tag" data-i18n="cat.tag">Los favoritos</p>
+        <h2 class="section-title" data-i18n="cat.title">Especialidades <em>de la casa</em></h2>
+        <p class="section-sub" data-i18n="cat.sub">Los platos que nuestros clientes piden una y otra vez. Los que no pueden faltar.</p>
+        <div class="cat-grid">
+
+          <div class="cat-card cc-green">
+            <div class="cat-img"><span>☕</span></div>
+            <div class="cat-info">
+              <div class="cat-badge" data-i18n="cat.fav">Favorito</div>
+              <h3 data-i18n="sp1.n">Latte de matcha</h3>
+              <p data-i18n="sp1.d">Matcha premium con leche de avena vaporizada. Verde, cremoso y adictivo.</p>
+              <span class="cat-price">RD$150</span>
+            </div>
+          </div>
+          <div class="cat-card cc-yellow">
+            <div class="cat-img"><span>🥐</span></div>
+            <div class="cat-info">
+              <div class="cat-badge" data-i18n="cat.new">Nuevo</div>
+              <h3 data-i18n="sp2.n">Croissant de almendras</h3>
+              <p data-i18n="sp2.d">Croissant horneado en el día con crema de almendras y azúcar glass.</p>
+              <span class="cat-price">RD$120</span>
+            </div>
+          </div>
+          <div class="cat-card cc-terra">
+            <div class="cat-img"><span>🎂</span></div>
+            <div class="cat-info">
+              <div class="cat-badge cat-badge-terra" data-i18n="cat.best">Lo mejor</div>
+              <h3 data-i18n="sp3.n">Cheesecake de guayaba</h3>
+              <p data-i18n="sp3.d">Cheesecake cremoso con mermelada de guayaba artesanal. 100% local.</p>
+              <span class="cat-price">RD$130</span>
+            </div>
+          </div>
+          <div class="cat-card cc-cream">
+            <div class="cat-img"><span>🥪</span></div>
+            <div class="cat-info">
+              <h3 data-i18n="sp4.n">Club sándwich Deli</h3>
+              <p data-i18n="sp4.d">Pan artesanal, pollo a la parrilla, aguacate y alioli de la casa.</p>
+              <span class="cat-price">RD$200</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="gallery-section" id="galeria">
+      <div class="gallery-inner">
+        <p class="section-tag" data-i18n="gal.tag">La cafetería</p>
+        <h2 class="section-title" data-i18n="gal.title">Nuestro <em>espacio</em></h2>
+        <div class="gallery-grid">
+          <div class="gal-item gi-tall"><div class="gph gph-green"><span>☕</span><p data-i18n="g1">El bar</p></div></div>
+          <div class="gal-item"><div class="gph gph-yellow"><span>🥐</span><p data-i18n="g2">Panadería</p></div></div>
+          <div class="gal-item"><div class="gph gph-terra"><span>🎂</span><p data-i18n="g3">Postres</p></div></div>
+          <div class="gal-item gi-wide"><div class="gph gph-cream"><span>🌿</span><p data-i18n="g4">Ambiente interior</p></div></div>
+          <div class="gal-item"><div class="gph gph-green"><span>🌸</span><p data-i18n="g5">Terraza</p></div></div>
+        </div>
+        <p class="gal-note" data-i18n="gal.note">✦ Próximamente fotos reales de la cafetería.</p>
+      </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section class="hours-section" id="horarios">
+      <div class="hours-inner">
+        <div class="hours-visual">
+          <div class="hv-card">
+            <div class="hv-top">
+              <span class="hv-emoji">☕</span>
+              <div class="hv-times">
+                <span class="hv-t">8<em>AM</em></span>
+                <span class="hv-dash">—</span>
+                <span class="hv-t">7<em>PM</em></span>
+              </div>
+            </div>
+            <div class="hv-open">
+              <span class="open-dot"></span>
+              <span data-i18n="hrs.open">Abierto hoy · Ven a vernos</span>
+            </div>
+            <div class="hv-days">
+              <span data-i18n="hrs.mon">Lun</span>
+              <span data-i18n="hrs.tue">Mar</span>
+              <span data-i18n="hrs.wed">Mié</span>
+              <span data-i18n="hrs.thu">Jue</span>
+              <span data-i18n="hrs.fri">Vie</span>
+              <span data-i18n="hrs.sat">Sáb</span>
+              <span data-i18n="hrs.sun">Dom</span>
+            </div>
+          </div>
+        </div>
+        <div class="hours-text">
+          <p class="section-tag" data-i18n="hrs.tag">Cuándo vernos</p>
+          <h2 class="section-title" data-i18n="hrs.title">Aquí estamos,<br><em>todos los días.</em></h2>
+          <p data-i18n="hrs.desc">Desde el primer café de la mañana hasta el postre de la tarde. Abrimos los 7 días de la semana porque las ganas de comer rico no tienen día libre.</p>
+          <div class="hours-list">
+            <div class="hl-row"><span data-i18n="hrs.mon2">Lunes – Viernes</span><span class="hl-t green-t">8:00 AM – 7:00 PM</span></div>
+            <div class="hl-row"><span data-i18n="hrs.sat2">Sábado</span><span class="hl-t yellow-t">8:00 AM – 7:00 PM</span></div>
+            <div class="hl-row"><span data-i18n="hrs.sun2">Domingo</span><span class="hl-t terra-t">8:00 AM – 7:00 PM</span></div>
+          </div>
+          <a href="#contacto" class="btn-primary" data-i18n="hrs.cta">Escríbenos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="location-section" id="ubicacion">
+      <div class="location-inner">
+        <div class="location-text">
+          <p class="section-tag" data-i18n="loc.tag">Dónde estamos</p>
+          <h2 class="section-title" data-i18n="loc.title">Encuéntranos en <em>Santiago.</em></h2>
+          <p data-i18n="loc.desc">Estamos en el corazón de Santiago, República Dominicana. Fácil de encontrar, con espacio para parquear y un ambiente que vale el viaje.</p>
+          <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="btn-primary map-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="loc.cta">Abrir en Google Maps</span>
+          </a>
+        </div>
+        <div class="location-map">
+          <div class="map-mock">
+            <div class="map-bg-pattern" aria-hidden="true"></div>
+            <div class="map-pin-area">
+              <div class="map-pulse-ring"></div>
+              <svg class="map-pin-svg" width="36" height="36" viewBox="0 0 24 24" fill="var(--green)" stroke="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="white"/></svg>
+            </div>
+            <p class="map-name">Deli Xuca · Santiago, RD</p>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="map-link" data-i18n="loc.open">Ver en Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-section" id="contacto">
+      <div class="contact-inner">
+        <div class="contact-header">
+          <p class="section-tag" data-i18n="con.tag">Háblanos</p>
+          <h2 class="section-title" data-i18n="con.title">¿Tienes antojo?<br><em>Escríbenos.</em></h2>
+          <p class="section-sub" data-i18n="con.sub">Para pedidos, reservas o simplemente saber si hay cheesecake disponible. Respondemos rápido.</p>
+        </div>
+        <div class="contact-cards">
+          <a href="https://wa.me/18090000000" target="_blank" rel="noopener" class="con-card wa-card">
+            <div class="con-icon wa-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.85L.057 23.09a.75.75 0 0 0 .92.92l5.255-1.476A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.75 9.75 0 0 1-4.95-1.35l-.354-.212-3.668 1.03 1.03-3.655-.224-.367A9.75 9.75 0 1 1 12 21.75z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.wa">WhatsApp · Pedidos</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+            <span class="con-arrow">→</span>
+          </a>
+          <a href="tel:+18090000000" class="con-card green-con">
+            <div class="con-icon green-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p1">Teléfono 1</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+          </a>
+          <a href="tel:+18290000000" class="con-card yellow-con">
+            <div class="con-icon yellow-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p2">Teléfono 2</span>
+              <span class="con-val">829-000-0000</span>
+            </div>
+          </a>
+          <a href="mailto:example@xucaphe.com" class="con-card terra-con">
+            <div class="con-icon terra-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.email">Correo</span>
+              <span class="con-val">example@xucaphe.com</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Redes -->
+        <div class="social-wrap">
+          <p class="social-label" data-i18n="con.follow">Síguenos</p>
+          <div class="social-row">
+            <a href="#" class="social-pill sp-green" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="social-pill sp-yellow" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="social-pill sp-terra" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+              TikTok
+            </a>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" class="social-pill sp-cream" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">☕ Deli <em>Xuca</em></span>
+        <p data-i18n="footer.desc">Cafetería · Santiago, RD</p>
+      </div>
+      <div class="footer-links">
+        <a href="#menu"      data-i18n="nav.menu">Menú</a>
+        <a href="#catalogo"  data-i18n="nav.catalog">Catálogo</a>
+        <a href="#horarios"  data-i18n="nav.hours">Horarios</a>
+        <a href="#contacto"  data-i18n="nav.contact">Contacto</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 Deli Xuca · Santiago, República Dominicana</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Xuca BarberShop — Barbería profesional en Santiago, RD. Cortes, arreglos de barba y más. Abierto de lunes a domingo, 8AM a 7PM.">
+  <meta name="keywords" content="barbería Santiago, Xuca BarberShop, corte de cabello Santiago, barbero dominicano, barba Santiago RD">
+  <meta name="author" content="Xuca BarberShop">
+  <meta property="og:title" content="Xuca BarberShop — Santiago, RD">
+  <meta property="og:description" content="Cortes que hablan por sí solos. Santiago, República Dominicana.">
+  <meta property="og:type" content="local_business">
+
+  <title>Xuca BarberShop — Santiago, RD</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Panel accesibilidad -->
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-label="Opciones de accesibilidad" aria-hidden="true">
+    <div class="a11y-header">
+      <span id="a11y-title">Accesibilidad</span>
+      <button class="a11y-close" onclick="toggleA11y()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="a11y-options">
+      <button class="a11y-opt" onclick="toggleHighContrast()" id="btn-contrast">
+        <span class="a11y-icon">◑</span><span id="lbl-contrast">Alto contraste</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleBigText()" id="btn-bigtext">
+        <span class="a11y-icon">A+</span><span id="lbl-bigtext">Texto grande</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleUnderlineLinks()" id="btn-links">
+        <span class="a11y-icon">U</span><span id="lbl-links">Subrayar enlaces</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleReadableFont()" id="btn-font">
+        <span class="a11y-icon">Aa</span><span id="lbl-font">Fuente legible</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Controles flotantes -->
+  <div class="floating-controls">
+    <button class="float-btn" onclick="toggleA11y()" aria-label="Accesibilidad">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 8c-4 0-7 2-7 5h14c0-3-3-5-7-5z"/><path d="M8 13v7M16 13v7M10 16h4"/></svg>
+    </button>
+    <button class="float-btn" onclick="toggleTheme()" id="themeBtn" aria-label="Cambiar tema">
+      <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+      <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#inicio" class="nav-logo">XUCA<span>BARBER</span></a>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-center" id="navMenu">
+      <a href="#nosotros"  class="nav-link" data-i18n="nav.about">Nosotros</a>
+      <a href="#servicios" class="nav-link" data-i18n="nav.services">Servicios</a>
+      <a href="#catalogo"  class="nav-link" data-i18n="nav.catalog">Catálogo</a>
+      <a href="#galeria"   class="nav-link" data-i18n="nav.gallery">Galería</a>
+      <a href="#horarios"  class="nav-link" data-i18n="nav.hours">Horarios</a>
+      <a href="#ubicacion" class="nav-link" data-i18n="nav.location">Ubicación</a>
+      <a href="#contacto"  class="nav-link" data-i18n="nav.contact">Contacto</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-stripes" aria-hidden="true">
+        <div class="stripe s1"></div>
+        <div class="stripe s2"></div>
+        <div class="stripe s3"></div>
+      </div>
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag-row">
+            <span class="tag-line"></span>
+            <span class="hero-tag" data-i18n="hero.tag">Santiago · RD · Est. 2024</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="ht-top" data-i18n="hero.line1">EL CORTE</span>
+            <span class="ht-mid">
+              <span class="ht-accent" data-i18n="hero.line2">DEFINE</span>
+              <span class="ht-outline" data-i18n="hero.line3">AL</span>
+            </span>
+            <span class="ht-bot" data-i18n="hero.line4">HOMBRE.</span>
+          </h1>
+          <p class="hero-sub" data-i18n="hero.sub">Precisión, estilo y actitud. En Xuca BarberShop cada corte es una obra de arte.</p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn-primary" data-i18n="hero.cta1">Reservar turno</a>
+            <a href="#servicios" class="btn-ghost" data-i18n="hero.cta2">Ver servicios</a>
+          </div>
+        </div>
+        <div class="hero-badge-col" aria-hidden="true">
+          <div class="badge-circle">
+            <span class="badge-inner">
+              <span class="badge-num">8AM</span>
+              <span class="badge-sep">—</span>
+              <span class="badge-num">7PM</span>
+            </span>
+            <span class="badge-ring-text">LUNES · MARTES · MIÉRCOLES · JUEVES · VIERNES · SÁBADO · DOMINGO ·</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>CORTES ✦</span><span>BARBA ✦</span><span>DISEÑOS ✦</span>
+          <span>DEGRADADOS ✦</span><span>TRATAMIENTOS ✦</span><span>SANTIAGO RD ✦</span>
+          <span>CORTES ✦</span><span>BARBA ✦</span><span>DISEÑOS ✦</span>
+          <span>DEGRADADOS ✦</span><span>TRATAMIENTOS ✦</span><span>SANTIAGO RD ✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about" id="nosotros">
+      <div class="about-inner">
+        <div class="about-img-col">
+          <div class="about-img-frame">
+            <div class="about-img-ph"><span>✂️</span></div>
+            <div class="about-img-deco"></div>
+          </div>
+          <div class="about-numbers">
+            <div class="num-box"><span class="num-n">7</span><span class="num-l" data-i18n="about.days">días</span></div>
+            <div class="num-box accent-box"><span class="num-n">100%</span><span class="num-l" data-i18n="about.pro">profesional</span></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-tag" data-i18n="about.tag">Quiénes somos</p>
+          <h2 class="section-title" data-i18n="about.title">NO ES SOLO<br>UN <span class="st-accent">CORTE.</span></h2>
+          <p data-i18n="about.p1">En Xuca BarberShop entendemos que el estilo es una extensión de tu personalidad. Cada cliente entra con una idea y sale con una identidad.</p>
+          <p data-i18n="about.p2">Barberos con experiencia real, tijeras afiladas y el mismo respeto por el detalle desde el primer minuto hasta el último acabado.</p>
+          <a href="#contacto" class="btn-primary" data-i18n="about.cta">Reservar ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services-section" id="servicios">
+      <div class="services-inner">
+        <div class="services-header">
+          <p class="section-tag" data-i18n="srv.tag">Lo que hacemos</p>
+          <h2 class="section-title" data-i18n="srv.title">SERVICIOS</h2>
+          <p class="section-sub" data-i18n="srv.sub">Todo lo que necesitas, bajo el mismo techo.</p>
+        </div>
+        <div class="services-grid">
+
+          <div class="srv-card featured">
+            <div class="srv-num">01</div>
+            <div class="srv-icon-wrap">✂️</div>
+            <h3 data-i18n="s1.name">Corte clásico</h3>
+            <p data-i18n="s1.desc">Corte a tijera o máquina con acabado limpio. Incluye lavado y secado.</p>
+            <span class="srv-price">RD$300</span>
+          </div>
+          <div class="srv-card">
+            <div class="srv-num">02</div>
+            <div class="srv-icon-wrap">⚡</div>
+            <h3 data-i18n="s2.name">Degradado & Fade</h3>
+            <p data-i18n="s2.desc">Low fade, mid fade o high fade. Transición perfecta de piel a cabello.</p>
+            <span class="srv-price">RD$350</span>
+          </div>
+          <div class="srv-card">
+            <div class="srv-num">03</div>
+            <div class="srv-icon-wrap">🧔</div>
+            <h3 data-i18n="s3.name">Arreglo de barba</h3>
+            <p data-i18n="s3.desc">Perfilado, relleno y acabado con navaja. Barba alineada al milímetro.</p>
+            <span class="srv-price">RD$250</span>
+          </div>
+          <div class="srv-card">
+            <div class="srv-num">04</div>
+            <div class="srv-icon-wrap">🎨</div>
+            <h3 data-i18n="s4.name">Diseño & Líneas</h3>
+            <p data-i18n="s4.desc">Diseños personalizados, líneas artísticas y patrones únicos en cabello o barba.</p>
+            <span class="srv-price">RD$400</span>
+          </div>
+          <div class="srv-card">
+            <div class="srv-num">05</div>
+            <div class="srv-icon-wrap">👑</div>
+            <h3 data-i18n="s5.name">Corte + Barba</h3>
+            <p data-i18n="s5.desc">El combo completo. Corte, fade y arreglo de barba en una sola sesión.</p>
+            <span class="srv-price">RD$500</span>
+          </div>
+          <div class="srv-card">
+            <div class="srv-num">06</div>
+            <div class="srv-icon-wrap">💆</div>
+            <h3 data-i18n="s6.name">Tratamiento capilar</h3>
+            <p data-i18n="s6.desc">Hidratación y nutrición para el cuero cabelludo. Cabello saludable y fuerte.</p>
+            <span class="srv-price">RD$450</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="catalog-section" id="catalogo">
+      <div class="catalog-inner">
+        <div class="catalog-header">
+          <p class="section-tag" data-i18n="cat.tag">Estilos</p>
+          <h2 class="section-title" data-i18n="cat.title">CATÁLOGO</h2>
+          <p class="section-sub" data-i18n="cat.sub">¿Tienes el estilo en mente? Tráenos la foto, nosotros lo hacemos realidad.</p>
+        </div>
+        <div class="cat-tabs">
+          <button class="cat-tab active" data-cat="cortes" onclick="filterCat(this)" data-i18n="cat.c1">Cortes</button>
+          <button class="cat-tab" data-cat="barba" onclick="filterCat(this)" data-i18n="cat.c2">Barba</button>
+          <button class="cat-tab" data-cat="disenos" onclick="filterCat(this)" data-i18n="cat.c3">Diseños</button>
+        </div>
+        <div class="cat-grid" id="catGrid">
+
+          <div class="cat-card" data-cat="cortes">
+            <div class="cat-img"><span>💈</span></div>
+            <div class="cat-info"><h3 data-i18n="c1.name">Skin fade</h3><p data-i18n="c1.desc">Degradado a piel con transición suave.</p></div>
+          </div>
+          <div class="cat-card" data-cat="cortes">
+            <div class="cat-img"><span>✂️</span></div>
+            <div class="cat-info"><h3 data-i18n="c2.name">Texturizado</h3><p data-i18n="c2.desc">Movimiento y volumen para cabello largo.</p></div>
+          </div>
+          <div class="cat-card" data-cat="cortes">
+            <div class="cat-img"><span>⚡</span></div>
+            <div class="cat-info"><h3 data-i18n="c3.name">Undercut moderno</h3><p data-i18n="c3.desc">Lados cortos con volumen arriba. Clásico urbano.</p></div>
+          </div>
+
+          <div class="cat-card" data-cat="barba" style="display:none">
+            <div class="cat-img"><span>🧔</span></div>
+            <div class="cat-info"><h3 data-i18n="c4.name">Barba cuadrada</h3><p data-i18n="c4.desc">Líneas definidas para un look poderoso.</p></div>
+          </div>
+          <div class="cat-card" data-cat="barba" style="display:none">
+            <div class="cat-img"><span>🪒</span></div>
+            <div class="cat-info"><h3 data-i18n="c5.name">Barba con navaja</h3><p data-i18n="c5.desc">Afeitado clásico con navaja de barbero.</p></div>
+          </div>
+          <div class="cat-card" data-cat="barba" style="display:none">
+            <div class="cat-img"><span>👊</span></div>
+            <div class="cat-info"><h3 data-i18n="c6.name">Barba estilo</h3><p data-i18n="c6.desc">Forma y volumen para barba larga.</p></div>
+          </div>
+
+          <div class="cat-card" data-cat="disenos" style="display:none">
+            <div class="cat-img"><span>🎨</span></div>
+            <div class="cat-info"><h3 data-i18n="c7.name">Línea artística</h3><p data-i18n="c7.desc">Líneas finas y precisas en fade o barba.</p></div>
+          </div>
+          <div class="cat-card" data-cat="disenos" style="display:none">
+            <div class="cat-img"><span>🔷</span></div>
+            <div class="cat-info"><h3 data-i18n="c8.name">Patrón geométrico</h3><p data-i18n="c8.desc">Diseños con figuras y formas personalizadas.</p></div>
+          </div>
+          <div class="cat-card" data-cat="disenos" style="display:none">
+            <div class="cat-img"><span>🌀</span></div>
+            <div class="cat-info"><h3 data-i18n="c9.name">Logo o inicial</h3><p data-i18n="c9.desc">Tu nombre, inicial o logo en tu corte.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="gallery-section" id="galeria">
+      <div class="gallery-inner">
+        <p class="section-tag" data-i18n="gal.tag">El shop</p>
+        <h2 class="section-title" data-i18n="gal.title">XUCA BARBERSHOP</h2>
+        <div class="gallery-grid">
+          <div class="gal-item gi-tall"><div class="gph"><span>💈</span><p data-i18n="g1">El shop</p></div></div>
+          <div class="gal-item"><div class="gph"><span>✂️</span><p data-i18n="g2">En acción</p></div></div>
+          <div class="gal-item"><div class="gph"><span>🪒</span><p data-i18n="g3">Detalle</p></div></div>
+          <div class="gal-item gi-wide"><div class="gph"><span>👊</span><p data-i18n="g4">El equipo</p></div></div>
+          <div class="gal-item"><div class="gph"><span>🎨</span><p data-i18n="g5">Diseños</p></div></div>
+        </div>
+        <p class="gal-note" data-i18n="gal.note">✦ Próximamente fotos reales del shop.</p>
+      </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section class="hours-section" id="horarios">
+      <div class="hours-inner">
+        <div class="hours-left">
+          <p class="section-tag" data-i18n="hrs.tag">Cuándo vernos</p>
+          <h2 class="section-title" data-i18n="hrs.title">ABIERTO<br><span class="st-accent">TODOS LOS DÍAS.</span></h2>
+          <p data-i18n="hrs.desc">No hay excusas para andar mal cortado. Abrimos de lunes a domingo para que siempre estés presentable.</p>
+          <a href="#contacto" class="btn-primary" data-i18n="hrs.cta">Reservar turno</a>
+        </div>
+        <div class="hours-right">
+          <div class="hours-display">
+            <div class="hd-top">
+              <span class="hd-time">8<em>AM</em></span>
+              <span class="hd-dash">—</span>
+              <span class="hd-time">7<em>PM</em></span>
+            </div>
+            <div class="hours-list">
+              <div class="h-row"><span data-i18n="hrs.mon">Lunes</span><span class="h-dot active"></span><span class="h-t">8AM–7PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.tue">Martes</span><span class="h-dot active"></span><span class="h-t">8AM–7PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.wed">Miércoles</span><span class="h-dot active"></span><span class="h-t">8AM–7PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.thu">Jueves</span><span class="h-dot active"></span><span class="h-t">8AM–7PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.fri">Viernes</span><span class="h-dot active"></span><span class="h-t">8AM–7PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.sat">Sábado</span><span class="h-dot active"></span><span class="h-t">8AM–7PM</span></div>
+              <div class="h-row"><span data-i18n="hrs.sun">Domingo</span><span class="h-dot active"></span><span class="h-t">8AM–7PM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="location-section" id="ubicacion">
+      <div class="location-inner">
+        <div class="location-text">
+          <p class="section-tag" data-i18n="loc.tag">Dónde estamos</p>
+          <h2 class="section-title" data-i18n="loc.title">ENCUÉNTRANOS<br><span class="st-accent">EN SANTIAGO.</span></h2>
+          <p data-i18n="loc.desc">Ubicados en Santiago, República Dominicana. Fácil acceso y estacionamiento disponible para nuestros clientes.</p>
+          <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="btn-primary map-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="loc.cta">Abrir en Google Maps</span>
+          </a>
+        </div>
+        <div class="location-map">
+          <div class="map-mock">
+            <div class="map-cross-lines" aria-hidden="true">
+              <div class="mcl h"></div>
+              <div class="mcl v"></div>
+            </div>
+            <div class="map-target" aria-hidden="true">
+              <div class="mt-ring r1"></div>
+              <div class="mt-ring r2"></div>
+              <div class="mt-dot"></div>
+            </div>
+            <p class="map-name">Xuca BarberShop · Santiago</p>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="map-link" data-i18n="loc.open">Ver en Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-section" id="contacto">
+      <div class="contact-inner">
+        <div class="contact-header">
+          <p class="section-tag" data-i18n="con.tag">Reserva tu turno</p>
+          <h2 class="section-title" data-i18n="con.title">¿LISTO PARA EL<br><span class="st-accent">SIGUIENTE NIVEL?</span></h2>
+          <p class="section-sub" data-i18n="con.sub">Escríbenos por WhatsApp o llámanos. Sin filas, sin esperas innecesarias.</p>
+        </div>
+        <div class="contact-cards">
+          <a href="https://wa.me/18090000000" target="_blank" rel="noopener" class="con-card wa-card">
+            <div class="con-num">01</div>
+            <div class="con-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.85L.057 23.09a.75.75 0 0 0 .92.92l5.255-1.476A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.75 9.75 0 0 1-4.95-1.35l-.354-.212-3.668 1.03 1.03-3.655-.224-.367A9.75 9.75 0 1 1 12 21.75z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.wa">WhatsApp · Turnos</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+            <span class="con-arrow">→</span>
+          </a>
+          <a href="tel:+18090000000" class="con-card">
+            <div class="con-num">02</div>
+            <div class="con-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p1">Teléfono 1</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+          </a>
+          <a href="tel:+18290000000" class="con-card">
+            <div class="con-num">03</div>
+            <div class="con-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p2">Teléfono 2</span>
+              <span class="con-val">829-000-0000</span>
+            </div>
+          </a>
+          <a href="mailto:example@xucaphe.com" class="con-card">
+            <div class="con-num">04</div>
+            <div class="con-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.email">Correo</span>
+              <span class="con-val">example@xucaphe.com</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Redes -->
+        <div class="social-wrap">
+          <p class="social-label" data-i18n="con.follow">Síguenos</p>
+          <div class="social-row">
+            <a href="#" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+              TikTok
+            </a>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">XUCA<em>BARBER</em>SHOP</span>
+        <p data-i18n="footer.desc">Barbería Profesional · Santiago, RD</p>
+      </div>
+      <div class="footer-links">
+        <a href="#servicios" data-i18n="nav.services">Servicios</a>
+        <a href="#catalogo"  data-i18n="nav.catalog">Catálogo</a>
+        <a href="#horarios"  data-i18n="nav.hours">Horarios</a>
+        <a href="#contacto"  data-i18n="nav.contact">Contacto</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 Xuca BarberShop · Santiago, República Dominicana</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

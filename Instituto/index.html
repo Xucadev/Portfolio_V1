@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Instituto Xuca — Instituto de clases especializadas en Santiago, RD. Formación profesional, cursos técnicos y programas de certificación. Inscripciones abiertas.">
+  <meta name="keywords" content="instituto Santiago, Instituto Xuca, clases especializadas Santiago RD, cursos técnicos dominicanos, formación profesional Santiago">
+  <meta name="author" content="Instituto Xuca">
+  <meta property="og:title" content="Instituto Xuca — Santiago, RD">
+  <meta property="og:description" content="Formación que transforma. Santiago, República Dominicana.">
+  <meta property="og:type" content="educational_institution">
+
+  <title>Instituto Xuca — Clases Especializadas en Santiago</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Panel accesibilidad -->
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-label="Opciones de accesibilidad" aria-hidden="true">
+    <div class="a11y-header">
+      <span id="a11y-title">Accesibilidad</span>
+      <button class="a11y-close" onclick="toggleA11y()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="a11y-options">
+      <button class="a11y-opt" onclick="toggleHighContrast()" id="btn-contrast">
+        <span class="a11y-icon">◑</span><span id="lbl-contrast">Alto contraste</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleBigText()" id="btn-bigtext">
+        <span class="a11y-icon">A+</span><span id="lbl-bigtext">Texto grande</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleUnderlineLinks()" id="btn-links">
+        <span class="a11y-icon">U</span><span id="lbl-links">Subrayar enlaces</span>
+      </button>
+      <button class="a11y-opt" onclick="toggleReadableFont()" id="btn-font">
+        <span class="a11y-icon">Aa</span><span id="lbl-font">Fuente legible</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Controles flotantes -->
+  <div class="floating-controls">
+    <button class="float-btn" onclick="toggleA11y()" aria-label="Accesibilidad">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 8c-4 0-7 2-7 5h14c0-3-3-5-7-5z"/><path d="M8 13v7M16 13v7M10 16h4"/></svg>
+    </button>
+    <button class="float-btn" onclick="toggleTheme()" id="themeBtn" aria-label="Cambiar tema">
+      <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+    </button>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#inicio" class="nav-logo">
+      <span class="logo-mark">IX</span>
+      <span class="logo-text">Instituto <em>Xuca</em></span>
+    </a>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-center" id="navMenu">
+      <a href="#nosotros"   class="nav-link" data-i18n="nav.about">Nosotros</a>
+      <a href="#programas"  class="nav-link" data-i18n="nav.programs">Programas</a>
+      <a href="#catalogo"   class="nav-link" data-i18n="nav.catalog">Catálogo</a>
+      <a href="#galeria"    class="nav-link" data-i18n="nav.gallery">Galería</a>
+      <a href="#horarios"   class="nav-link" data-i18n="nav.hours">Horarios</a>
+      <a href="#ubicacion"  class="nav-link" data-i18n="nav.location">Ubicación</a>
+      <a href="#contacto"   class="nav-link" data-i18n="nav.contact">Contacto</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg-lines" aria-hidden="true">
+        <div class="hbl l1"></div>
+        <div class="hbl l2"></div>
+        <div class="hbl l3"></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-overline">
+            <span class="overline-bar"></span>
+            <span data-i18n="hero.over">Instituto · Santiago · RD</span>
+          </div>
+          <h1 class="hero-title">
+            <span data-i18n="hero.l1">Formación que</span>
+            <em data-i18n="hero.l2">transforma</em>
+            <span data-i18n="hero.l3">vidas.</span>
+          </h1>
+          <p class="hero-sub" data-i18n="hero.sub">Programas especializados diseñados para elevar tus habilidades profesionales. Docentes calificados, metodología moderna y certificaciones reconocidas.</p>
+          <div class="hero-actions">
+            <a href="#programas" class="btn-primary" data-i18n="hero.cta1">Ver programas</a>
+            <a href="#contacto"  class="btn-outline"  data-i18n="hero.cta2">Inscribirse ahora</a>
+          </div>
+          <div class="hero-pillars">
+            <div class="pillar">
+              <span class="pillar-n">100%</span>
+              <span class="pillar-l" data-i18n="hero.p1">Certificado</span>
+            </div>
+            <div class="pillar-div"></div>
+            <div class="pillar">
+              <span class="pillar-n">7d</span>
+              <span class="pillar-l" data-i18n="hero.p2">Horarios</span>
+            </div>
+            <div class="pillar-div"></div>
+            <div class="pillar">
+              <span class="pillar-n">STG</span>
+              <span class="pillar-l" data-i18n="hero.p3">Santiago</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-crest" aria-hidden="true">
+          <div class="crest-frame">
+            <div class="crest-inner">
+              <span class="crest-monogram">IX</span>
+              <span class="crest-sub" data-i18n="hero.crest">Instituto Xuca</span>
+            </div>
+            <div class="crest-ring r1"></div>
+            <div class="crest-ring r2"></div>
+            <div class="crest-corner cc1"></div>
+            <div class="crest-corner cc2"></div>
+            <div class="crest-corner cc3"></div>
+            <div class="crest-corner cc4"></div>
+          </div>
+          <div class="crest-tags">
+            <div class="ctag t1" data-i18n="hero.t1">Excelencia académica</div>
+            <div class="ctag t2" data-i18n="hero.t2">Certificaciones</div>
+            <div class="ctag t3" data-i18n="hero.t3">Docentes expertos</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about" id="nosotros">
+      <div class="about-inner">
+        <div class="about-visual">
+          <div class="about-frame">
+            <div class="af-img"><span>🎓</span></div>
+            <div class="af-seal">
+              <span class="seal-text">INSTITUTO XUCA · SANTIAGO · RD ·</span>
+              <span class="seal-center">✦</span>
+            </div>
+          </div>
+          <div class="about-stat-row">
+            <div class="astat"><span class="astat-n" data-i18n="ab.s1n">+10</span><span class="astat-l" data-i18n="ab.s1l">Programas</span></div>
+            <div class="astat-sep"></div>
+            <div class="astat"><span class="astat-n" data-i18n="ab.s2n">100%</span><span class="astat-l" data-i18n="ab.s2l">Certificado</span></div>
+            <div class="astat-sep"></div>
+            <div class="astat"><span class="astat-n" data-i18n="ab.s3n">7d</span><span class="astat-l" data-i18n="ab.s3l">Atención</span></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-tag" data-i18n="about.tag">Nuestra misión</p>
+          <h2 class="section-title" data-i18n="about.title">Educación de calidad<br><em>al alcance de todos.</em></h2>
+          <p data-i18n="about.p1">Instituto Xuca es una institución educativa comprometida con la formación técnica y profesional de calidad en Santiago. Ofrecemos programas diseñados para responder a las demandas reales del mercado laboral dominicano.</p>
+          <p data-i18n="about.p2">Nuestro equipo de docentes especializados combina conocimiento teórico con experiencia práctica, garantizando que cada estudiante adquiera las herramientas para destacar en su área.</p>
+          <a href="#programas" class="btn-primary" data-i18n="about.cta">Conocer los programas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMAS -->
+    <section class="programs-section" id="programas">
+      <div class="programs-inner">
+        <div class="prog-header">
+          <p class="section-tag" data-i18n="prog.tag">Oferta académica</p>
+          <h2 class="section-title" data-i18n="prog.title">Programas <em>especializados</em></h2>
+          <p class="section-sub" data-i18n="prog.sub">Cada programa está diseñado para que adquieras conocimientos aplicables desde el primer día.</p>
+        </div>
+        <div class="prog-grid">
+
+          <div class="prog-card navy-card">
+            <div class="pc-num">01</div>
+            <div class="pc-icon">💻</div>
+            <h3 data-i18n="p1.n">Tecnología e Informática</h3>
+            <p data-i18n="p1.d">Programación, diseño web, redes y soporte técnico. Preparación para el mundo digital.</p>
+            <div class="pc-meta">
+              <span data-i18n="p1.dur">3 meses</span>
+              <span class="pc-cert" data-i18n="pc.cert">Certificado</span>
+            </div>
+          </div>
+
+          <div class="prog-card gold-card">
+            <div class="pc-num">02</div>
+            <div class="pc-icon">📊</div>
+            <h3 data-i18n="p2.n">Administración & Contabilidad</h3>
+            <p data-i18n="p2.d">Gestión empresarial, contabilidad básica y avanzada, nómina y administración de negocios.</p>
+            <div class="pc-meta">
+              <span data-i18n="p2.dur">4 meses</span>
+              <span class="pc-cert" data-i18n="pc.cert">Certificado</span>
+            </div>
+          </div>
+
+          <div class="prog-card navy-card">
+            <div class="pc-num">03</div>
+            <div class="pc-icon">🗣️</div>
+            <h3 data-i18n="p3.n">Idiomas & Comunicación</h3>
+            <p data-i18n="p3.d">Inglés, francés y español avanzado. Comunicación profesional y habilidades de presentación.</p>
+            <div class="pc-meta">
+              <span data-i18n="p3.dur">6 meses</span>
+              <span class="pc-cert" data-i18n="pc.cert">Certificado</span>
+            </div>
+          </div>
+
+          <div class="prog-card featured-card">
+            <div class="pc-pop" data-i18n="prog.pop">✦ Más inscrito</div>
+            <div class="pc-num">04</div>
+            <div class="pc-icon">📱</div>
+            <h3 data-i18n="p4.n">Marketing Digital</h3>
+            <p data-i18n="p4.d">Redes sociales, SEO, publicidad digital, branding y estrategias de contenido para negocios.</p>
+            <div class="pc-meta">
+              <span data-i18n="p4.dur">3 meses</span>
+              <span class="pc-cert" data-i18n="pc.cert">Certificado</span>
+            </div>
+          </div>
+
+          <div class="prog-card navy-card">
+            <div class="pc-num">05</div>
+            <div class="pc-icon">✂️</div>
+            <h3 data-i18n="p5.n">Diseño & Moda</h3>
+            <p data-i18n="p5.d">Diseño gráfico, ilustración, corte y confección. Creatividad aplicada con herramientas actuales.</p>
+            <div class="pc-meta">
+              <span data-i18n="p5.dur">4 meses</span>
+              <span class="pc-cert" data-i18n="pc.cert">Certificado</span>
+            </div>
+          </div>
+
+          <div class="prog-card gold-card">
+            <div class="pc-num">06</div>
+            <div class="pc-icon">🍳</div>
+            <h3 data-i18n="p6.n">Gastronomía & Pastelería</h3>
+            <p data-i18n="p6.d">Técnicas culinarias, repostería profesional y gestión de cocina para emprendedores del sector.</p>
+            <div class="pc-meta">
+              <span data-i18n="p6.dur">5 meses</span>
+              <span class="pc-cert" data-i18n="pc.cert">Certificado</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO DE CURSOS -->
+    <section class="catalog-section" id="catalogo">
+      <div class="catalog-inner">
+        <div class="cat-header">
+          <p class="section-tag" data-i18n="cat.tag">Todos los cursos</p>
+          <h2 class="section-title" data-i18n="cat.title">Catálogo <em>completo</em></h2>
+          <p class="section-sub" data-i18n="cat.sub">Cursos cortos, talleres y diplomados disponibles según demanda. Consulta inscripciones y fechas.</p>
+        </div>
+        <div class="cat-tabs">
+          <button class="cat-tab active" data-cat="all"   onclick="filterCat(this)" data-i18n="cat.all">Todos</button>
+          <button class="cat-tab" data-cat="tech"         onclick="filterCat(this)" data-i18n="cat.c1">Tecnología</button>
+          <button class="cat-tab" data-cat="business"     onclick="filterCat(this)" data-i18n="cat.c2">Negocios</button>
+          <button class="cat-tab" data-cat="arts"         onclick="filterCat(this)" data-i18n="cat.c3">Arte & Diseño</button>
+          <button class="cat-tab" data-cat="languages"    onclick="filterCat(this)" data-i18n="cat.c4">Idiomas</button>
+        </div>
+        <div class="cat-list" id="catGrid">
+
+          <div class="cat-row" data-cat="tech">
+            <div class="cr-icon">💻</div>
+            <div class="cr-info">
+              <h3 data-i18n="cr1.n">Microsoft Office avanzado</h3>
+              <p data-i18n="cr1.d">Word, Excel, PowerPoint y Outlook a nivel profesional.</p>
+            </div>
+            <div class="cr-meta">
+              <span class="cr-dur" data-i18n="cr1.dur">6 semanas</span>
+              <span class="cr-badge tech-b" data-i18n="cr.tech">Tecnología</span>
+            </div>
+          </div>
+
+          <div class="cat-row" data-cat="tech">
+            <div class="cr-icon">🌐</div>
+            <div class="cr-info">
+              <h3 data-i18n="cr2.n">Diseño web básico</h3>
+              <p data-i18n="cr2.d">HTML, CSS y fundamentos del desarrollo frontend.</p>
+            </div>
+            <div class="cr-meta">
+              <span class="cr-dur" data-i18n="cr2.dur">8 semanas</span>
+              <span class="cr-badge tech-b" data-i18n="cr.tech">Tecnología</span>
+            </div>
+          </div>
+
+          <div class="cat-row" data-cat="business">
+            <div class="cr-icon">📈</div>
+            <div class="cr-info">
+              <h3 data-i18n="cr3.n">Emprendimiento y negocios</h3>
+              <p data-i18n="cr3.d">Plan de negocios, finanzas básicas y estrategia empresarial.</p>
+            </div>
+            <div class="cr-meta">
+              <span class="cr-dur" data-i18n="cr3.dur">4 semanas</span>
+              <span class="cr-badge biz-b" data-i18n="cr.biz">Negocios</span>
+            </div>
+          </div>
+
+          <div class="cat-row" data-cat="business">
+            <div class="cr-icon">💰</div>
+            <div class="cr-info">
+              <h3 data-i18n="cr4.n">Contabilidad básica</h3>
+              <p data-i18n="cr4.d">Introducción a la contabilidad, registros y estados financieros.</p>
+            </div>
+            <div class="cr-meta">
+              <span class="cr-dur" data-i18n="cr4.dur">6 semanas</span>
+              <span class="cr-badge biz-b" data-i18n="cr.biz">Negocios</span>
+            </div>
+          </div>
+
+          <div class="cat-row" data-cat="arts">
+            <div class="cr-icon">🎨</div>
+            <div class="cr-info">
+              <h3 data-i18n="cr5.n">Diseño gráfico con Canva</h3>
+              <p data-i18n="cr5.d">Diseño profesional para redes sociales y material impreso.</p>
+            </div>
+            <div class="cr-meta">
+              <span class="cr-dur" data-i18n="cr5.dur">4 semanas</span>
+              <span class="cr-badge art-b" data-i18n="cr.art">Arte</span>
+            </div>
+          </div>
+
+          <div class="cat-row" data-cat="arts">
+            <div class="cr-icon">📸</div>
+            <div class="cr-info">
+              <h3 data-i18n="cr6.n">Fotografía digital</h3>
+              <p data-i18n="cr6.d">Composición, iluminación y edición básica con Lightroom.</p>
+            </div>
+            <div class="cr-meta">
+              <span class="cr-dur" data-i18n="cr6.dur">5 semanas</span>
+              <span class="cr-badge art-b" data-i18n="cr.art">Arte</span>
+            </div>
+          </div>
+
+          <div class="cat-row" data-cat="languages">
+            <div class="cr-icon">🇺🇸</div>
+            <div class="cr-info">
+              <h3 data-i18n="cr7.n">Inglés conversacional</h3>
+              <p data-i18n="cr7.d">Niveles básico, intermedio y avanzado. Metodología comunicativa.</p>
+            </div>
+            <div class="cr-meta">
+              <span class="cr-dur" data-i18n="cr7.dur">12 semanas</span>
+              <span class="cr-badge lang-b" data-i18n="cr.lang">Idioma</span>
+            </div>
+          </div>
+
+          <div class="cat-row" data-cat="languages">
+            <div class="cr-icon">🇫🇷</div>
+            <div class="cr-info">
+              <h3 data-i18n="cr8.n">Francés básico</h3>
+              <p data-i18n="cr8.d">Introducción a la lengua francesa para principiantes.</p>
+            </div>
+            <div class="cr-meta">
+              <span class="cr-dur" data-i18n="cr8.dur">8 semanas</span>
+              <span class="cr-badge lang-b" data-i18n="cr.lang">Idioma</span>
+            </div>
+          </div>
+
+        </div>
+        <p class="cat-note" data-i18n="cat.note">✦ Consulta disponibilidad y fechas de inicio por WhatsApp o llamando directamente.</p>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="gallery-section" id="galeria">
+      <div class="gallery-inner">
+        <p class="section-tag" data-i18n="gal.tag">El instituto</p>
+        <h2 class="section-title" data-i18n="gal.title">Nuestras <em>instalaciones</em></h2>
+        <div class="gallery-grid">
+          <div class="gal-item gi-tall"><div class="gph"><span>🏫</span><p data-i18n="g1">El instituto</p></div></div>
+          <div class="gal-item"><div class="gph"><span>💻</span><p data-i18n="g2">Laboratorio</p></div></div>
+          <div class="gal-item"><div class="gph"><span>📚</span><p data-i18n="g3">Biblioteca</p></div></div>
+          <div class="gal-item gi-wide"><div class="gph"><span>🎓</span><p data-i18n="g4">Salón de clases</p></div></div>
+          <div class="gal-item"><div class="gph"><span>🏆</span><p data-i18n="g5">Graduaciones</p></div></div>
+        </div>
+        <p class="gal-note" data-i18n="gal.note">✦ Próximamente fotos reales del instituto.</p>
+      </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section class="hours-section" id="horarios">
+      <div class="hours-inner">
+        <div class="hours-text">
+          <p class="section-tag" data-i18n="hrs.tag">Cuándo visitarnos</p>
+          <h2 class="section-title" data-i18n="hrs.title">Horarios de <em>atención.</em></h2>
+          <p data-i18n="hrs.desc">Atendemos todos los días de la semana. Puedes inscribirte, consultar información o visitar nuestras instalaciones en cualquiera de nuestros horarios.</p>
+          <a href="#contacto" class="btn-primary" data-i18n="hrs.cta">Consultar inscripción</a>
+        </div>
+        <div class="hours-table">
+          <div class="ht-header">
+            <span data-i18n="ht.day">Día</span>
+            <span data-i18n="ht.time">Horario</span>
+            <span data-i18n="ht.status">Estado</span>
+          </div>
+          <div class="ht-row"><span data-i18n="hrs.mon">Lunes</span><span>8:00 AM – 7:00 PM</span><span class="ht-open" data-i18n="hrs.open">Abierto</span></div>
+          <div class="ht-row"><span data-i18n="hrs.tue">Martes</span><span>8:00 AM – 7:00 PM</span><span class="ht-open" data-i18n="hrs.open">Abierto</span></div>
+          <div class="ht-row"><span data-i18n="hrs.wed">Miércoles</span><span>8:00 AM – 7:00 PM</span><span class="ht-open" data-i18n="hrs.open">Abierto</span></div>
+          <div class="ht-row"><span data-i18n="hrs.thu">Jueves</span><span>8:00 AM – 7:00 PM</span><span class="ht-open" data-i18n="hrs.open">Abierto</span></div>
+          <div class="ht-row"><span data-i18n="hrs.fri">Viernes</span><span>8:00 AM – 7:00 PM</span><span class="ht-open" data-i18n="hrs.open">Abierto</span></div>
+          <div class="ht-row"><span data-i18n="hrs.sat">Sábado</span><span>8:00 AM – 7:00 PM</span><span class="ht-open" data-i18n="hrs.open">Abierto</span></div>
+          <div class="ht-row"><span data-i18n="hrs.sun">Domingo</span><span>8:00 AM – 7:00 PM</span><span class="ht-open" data-i18n="hrs.open">Abierto</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="location-section" id="ubicacion">
+      <div class="location-inner">
+        <div class="location-text">
+          <p class="section-tag" data-i18n="loc.tag">Encuéntranos</p>
+          <h2 class="section-title" data-i18n="loc.title">Ubicados en el<br><em>corazón de Santiago.</em></h2>
+          <p data-i18n="loc.desc">Instituto Xuca está ubicado en Santiago, República Dominicana. Fácil acceso en transporte público y privado, con zona de estacionamiento disponible.</p>
+          <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="btn-primary map-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="loc.cta">Abrir en Google Maps</span>
+          </a>
+        </div>
+        <div class="location-map">
+          <div class="map-mock">
+            <div class="map-cross" aria-hidden="true">
+              <div class="mc-line mh"></div>
+              <div class="mc-line mv"></div>
+            </div>
+            <div class="map-marker-wrap">
+              <div class="mp-rings">
+                <div class="mpr r1"></div>
+                <div class="mpr r2"></div>
+              </div>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="var(--navy)" stroke="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="var(--gold)"/></svg>
+            </div>
+            <p class="map-name">Instituto Xuca · Santiago, RD</p>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" target="_blank" rel="noopener" class="map-link" data-i18n="loc.open">Ver en Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-section" id="contacto">
+      <div class="contact-inner">
+        <div class="contact-header">
+          <p class="section-tag" data-i18n="con.tag">Inscripciones abiertas</p>
+          <h2 class="section-title" data-i18n="con.title">¿Listo para<br><em>comenzar?</em></h2>
+          <p class="section-sub" data-i18n="con.sub">Contáctanos por WhatsApp o llámanos para orientarte sobre el programa ideal para tus metas profesionales. Respondemos de inmediato.</p>
+        </div>
+        <div class="contact-cards">
+          <a href="https://wa.me/18090000000" target="_blank" rel="noopener" class="con-card featured-con">
+            <div class="con-icon wa-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.85L.057 23.09a.75.75 0 0 0 .92.92l5.255-1.476A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.75 9.75 0 0 1-4.95-1.35l-.354-.212-3.668 1.03 1.03-3.655-.224-.367A9.75 9.75 0 1 1 12 21.75z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.wa">WhatsApp · Inscripciones</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+            <span class="con-arrow">→</span>
+          </a>
+          <a href="tel:+18090000000" class="con-card">
+            <div class="con-icon navy-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p1">Teléfono 1</span>
+              <span class="con-val">809-000-0000</span>
+            </div>
+          </a>
+          <a href="tel:+18290000000" class="con-card">
+            <div class="con-icon navy-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.p2">Teléfono 2</span>
+              <span class="con-val">829-000-0000</span>
+            </div>
+          </a>
+          <a href="mailto:example@xucaphe.com" class="con-card">
+            <div class="con-icon gold-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="con-text">
+              <span class="con-label" data-i18n="con.email">Correo institucional</span>
+              <span class="con-val">example@xucaphe.com</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Redes -->
+        <div class="social-wrap">
+          <p class="social-label" data-i18n="con.follow">Síguenos</p>
+          <div class="social-row">
+            <a href="#" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+              TikTok
+            </a>
+            <a href="https://maps.google.com/?q=Santiago,+República+Dominicana" class="social-pill" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <span class="footer-mark">IX</span>
+          <div>
+            <span class="footer-logo">Instituto <em>Xuca</em></span>
+            <p data-i18n="footer.desc">Clases Especializadas · Santiago, RD</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#programas" data-i18n="nav.programs">Programas</a>
+        <a href="#catalogo"  data-i18n="nav.catalog">Catálogo</a>
+        <a href="#horarios"  data-i18n="nav.hours">Horarios</a>
+        <a href="#contacto"  data-i18n="nav.contact">Contacto</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 Instituto Xuca · Santiago, República Dominicana</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
